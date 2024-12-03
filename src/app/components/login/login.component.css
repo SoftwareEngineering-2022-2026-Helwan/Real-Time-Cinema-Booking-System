@@ -1,0 +1,54 @@
+form{
+  width: 700px;
+  height: auto;
+  border-radius: 25px;
+  justify-content: center;
+}
+
+form h2{
+    margin-top: 2px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group{
+  margin-bottom: 20px;
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.form-group label{
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.form-group input{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.btn {
+  border: 2px solid #11435a;
+  border-radius: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn:hover{
+  background-color: #11435a;
+  color: white;
+}
+
+::ng-deep mat-spinner circle{
+  stroke: #11435a;
+}
+
+::ng-deep mat-spinner circle:hover{
+  stroke: white;
+}
