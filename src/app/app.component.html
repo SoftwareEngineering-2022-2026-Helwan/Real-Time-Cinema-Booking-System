@@ -1,2 +1,6 @@
+
 <!-- <app-movie-list></app-movie-list> -->
-<!-- <app-detailed-movieCard></app-detailed-movieCard> -->
+
+<div class="list">
+    <app-detailed-movieCard *ngFor="let movie of movies" [movie]="movie"></app-detailed-movieCard>
+</div>

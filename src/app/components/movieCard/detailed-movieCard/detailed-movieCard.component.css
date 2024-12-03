@@ -1,25 +1,31 @@
 /* Movie Card Styling */
 .movie-card {
-  max-width: 1000px;
+  /* max-width: 1000px; */
   margin: auto;
+  margin-bottom: 10px;
   background-color: #f5f5f5;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-/* Image Container */
-.image-container {
-  width: 100%; /* Full width */
-  height: auto;
-  position: relative;
+.dataSection
+{
+    display: flex;
+    flex-direction: row;
 }
+/* Image Container */
+.image-section {
+  width: 100%; /* Full width */
+  height: fit-content;
+  position: relative;
 
-.image-container img {
+}
+.image-section img {
+
   display: block;
   width: 100%; /* Ensure the image spans the container width */
   height: 400px; /* Set a fixed height for the container */
-  object-fit: cover; /* Ensures the image fills the container */
+  /* object-fit: cover; Ensures the image fills the container */
   object-position: left; /* Align the image to the left */
 }
 
@@ -49,6 +55,6 @@
 .value {
   color: #666;
   font-weight: bold;
-  font-size: 24px;
+  font-size: clamp(16px,18px,24px);
   text-align: right;
 }

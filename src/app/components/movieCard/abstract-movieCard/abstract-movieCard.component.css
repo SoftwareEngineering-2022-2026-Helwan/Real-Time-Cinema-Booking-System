@@ -41,16 +41,18 @@ h3.label {
   font-size: 16px;
   color: #7c7f84;
   margin: 0;
-  flex: 1; /* Allow labels to align consistently */
+  flex-shrink: 1; /* Allow labels to align consistently */
+  flex-grow: 1; /* Allow labels to expand to fill available space */
 }
 
 p.value {
-  font-size: 18px;
+  font-size: clamp(12px,14px,18px);
   font-weight: bold;
   color: #333;
   margin: 0;
-  flex: 1; /* Keep values aligned and spaced */
+  flex-shrink: 1; /* Keep values aligned and spaced */
   text-align: right; /* Align values to the right */
+  flex-grow: 1; /* Allow values to expand to fill available space */
 }
 
 
