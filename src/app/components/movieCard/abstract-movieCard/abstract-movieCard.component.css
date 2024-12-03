@@ -1,0 +1,56 @@
+/* movie-card.component.css */
+.movie-card {
+  display: flex;
+  flex-direction: column; /* Vertical stacking for sections */
+  background-color: #ececec;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 350px; /* Set max-width for compact layout */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+}
+
+.image-section img {
+  width: 100%; /* Ensure the image fills the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.details-section {
+  width: 100%;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between; /* Place label and value side by side */
+  align-items: center;
+  border-bottom: 1px solid #ccc; /* Add underline */
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.detail:last-child {
+  border-bottom: none; /* Remove underline from the last detail */
+}
+
+h3.label {
+  font-size: 16px;
+  color: #7c7f84;
+  margin: 0;
+  flex: 1; /* Allow labels to align consistently */
+}
+
+p.value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  flex: 1; /* Keep values aligned and spaced */
+  text-align: right; /* Align values to the right */
+}
+
+
