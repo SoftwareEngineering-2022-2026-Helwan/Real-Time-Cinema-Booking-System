@@ -1,0 +1,23 @@
+{
+  "name": "staffmonitor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^22.10.0",
+    "mqtt": "^5.10.3",
+    "random": "^5.1.1"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.26.0",
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5"
+  }
+}
