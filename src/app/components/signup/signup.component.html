@@ -1,3 +1,290 @@
-<p>
-  signup works!
-</p>
+<div
+  class="container"
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #11435a;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  "
+>
+  <div
+    class="row"
+    style="
+      width: 100%;
+      max-width: 700px;
+      background: #e2ebef;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    "
+  >
+    <form [formGroup]="signupForm" (ngSubmit)="submitSignupForm(signupForm)">
+      <div class="container">
+        <div class="profile_img">
+          <img
+            src="../../../assets/imgs/pfp.jpg"
+            alt=""
+            class="img-fluid shadow"
+            style="
+              position: relative;
+              border-radius: 50%;
+              width: 70px;
+              justify-content: center;
+            "
+          />
+        </div>
+      </div>
+      <h2>Signup</h2>
+      <div class="input-form-group">
+        <div class="name-group">
+          <div class="mb-3 form-group">
+            <label for="fname" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="fname"
+              placeholder="e.g. John"
+              formControlName="fname"
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                signupForm.get('fname')?.errors &&
+                signupForm.get('fname')?.touched
+              "
+              style="
+                height: max-content;
+                min-height: 30px;
+                max-height: 100px;
+                margin-top: 3px;
+                padding-top: 4px;
+                padding-bottom: 0px;
+                overflow: none;
+                color: #666;
+              "
+            >
+              <p *ngIf="signupForm.get('fname')?.getError('required')">
+                First name is required
+              </p>
+              <p *ngIf="signupForm.get('fname')?.getError('minlength')">
+                name too short
+              </p>
+              <p *ngIf="signupForm.get('fname')?.getError('maxlength')">
+                name too long
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="lname" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lname"
+              placeholder="e.g. Smith"
+              formControlName="lname"
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                signupForm.get('lname')?.errors &&
+                signupForm.get('lname')?.touched
+              "
+              style="
+                height: max-content;
+                min-height: 30px;
+                max-height: 100px;
+                margin-top: 3px;
+                padding-top: 4px;
+                padding-bottom: 0px;
+                overflow: none;
+                color: #666;
+              "
+            >
+              <p *ngIf="signupForm.get('lname')?.getError('required')">
+                Last name is required
+              </p>
+              <p *ngIf="signupForm.get('lname')?.getError('minlength')">
+                name too short
+              </p>
+              <p *ngIf="signupForm.get('lname')?.getError('maxlength')">
+                name too long
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="another-form-group">
+          <div class="mb-3 form-group">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+              formControlName="email"
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                signupForm.get('email')?.errors &&
+                signupForm.get('email')?.touched
+              "
+              style="
+                height: max-content;
+                min-height: 30px;
+                max-height: 100px;
+                margin-top: 3px;
+                padding-top: 4px;
+                padding-bottom: 0px;
+                overflow: none;
+                color: #666;
+              "
+            >
+              <p *ngIf="signupForm.get('email')?.getError('required')">
+                Email is required
+              </p>
+              <p *ngIf="signupForm.get('email')?.getError('email')">
+                Email is Invalid
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="pass" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="pass"
+              placeholder="***************"
+              formControlName="password"
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                signupForm.get('password')?.errors &&
+                signupForm.get('password')?.touched
+              "
+              style="
+                height: max-content;
+                min-height: 30px;
+                max-height: 100px;
+                margin-top: 3px;
+                padding-top: 4px;
+                padding-bottom: 0px;
+                overflow: none;
+                color: #666;
+              "
+            >
+              <p *ngIf="signupForm.get('password')?.getError('required')">
+                Password is required
+              </p>
+              <p
+                *ngIf="
+                  signupForm.get('password')?.getError('pattern') ||
+                  signupForm.get('password')?.getError('minlength') ||
+                  signupForm.get('password')?.getError('maxlength')
+                "
+              >
+                Password must be alphanumeric, length between 8 and 15
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="verifyPass" class="form-label">Verify Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="verifyPass"
+              placeholder="***************"
+              formControlName="verifyPassword"
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                signupForm.get('verifyPassword')?.errors &&
+                signupForm.get('verifyPassword')?.touched
+              "
+              style="
+                height: max-content;
+                min-height: 30px;
+                max-height: 100px;
+                margin-top: 3px;
+                padding-top: 4px;
+                padding-bottom: 0px;
+                overflow: none;
+                color: #666;
+              "
+            >
+              <p *ngIf="signupForm.get('verifyPassword')?.getError('required')">
+                Verification is required
+              </p>
+              <p
+                *ngIf="
+                  signupForm.get('verifyPassword')?.getError('passwordNotMatch')
+                "
+              >
+                Password does not match
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="phone" class="form-label">Phone</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              placeholder="+20**********"
+              formControlName="phone"
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                signupForm.get('phone')?.errors &&
+                signupForm.get('phone')?.touched
+              "
+              style="
+                height: max-content;
+                min-height: 30px;
+                max-height: 100px;
+                margin-top: 3px;
+                padding-top: 4px;
+                padding-bottom: 0px;
+                overflow: none;
+                color: #666;
+              "
+            >
+              <p *ngIf="signupForm.get('phone')?.getError('required')">
+                Phone is required
+              </p>
+              <p
+                *ngIf="
+                  signupForm.get('phone')?.getError('minlength') ||
+                  signupForm.get('phone')?.getError('maxlength')
+                "
+              >
+                Phone is Invalid
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn"
+        [disabled]="signupForm.invalid"
+        (click)="displayLoader()"
+      >
+        <span *ngIf="!showLoader">Signup</span>
+        <div style="justify-content: center; display: flex">
+          <mat-spinner
+            style="width: 3em; height: 2em"
+            *ngIf="showLoader"
+          ></mat-spinner>
+        </div>
+      </button>
+    </form>
+  </div>
+</div>
