@@ -9,7 +9,7 @@ import { Movie } from '../../../interfaces/movie.interface';
 
 /*
 
-this component input came from url and services 
+this component input came from url and services or from the reservation component
 =========================
 to display the card in good shape apply this css
 .list
