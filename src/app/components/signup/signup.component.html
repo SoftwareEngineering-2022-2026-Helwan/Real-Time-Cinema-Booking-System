@@ -204,7 +204,7 @@
             <div
               class="alert alert-danger"
               *ngIf="
-                signupForm.get('verifyPassword')?.errors &&
+                signupForm.errors?.['passwordNotMatch'] &&
                 signupForm.get('verifyPassword')?.touched
               "
               style="
@@ -223,7 +223,7 @@
               </p>
               <p
                 *ngIf="
-                  signupForm.get('verifyPassword')?.getError('passwordNotMatch')
+                  signupForm.get('verifyPassword')?.getError('passwordNotMatch') || signupForm.errors?.['passwordNotMatch']
                 "
               >
                 Password does not match
