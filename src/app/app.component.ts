@@ -9,6 +9,7 @@ import { SignupComponent } from './components/signup/signup.component';
 })
 export class AppComponent {
 
+
   constructor(public dialog: MatDialog) {
 
   }
@@ -40,6 +41,7 @@ export class AppComponent {
       cinema: 'Cinema 3'
     }
   ];
+
 
 
 }

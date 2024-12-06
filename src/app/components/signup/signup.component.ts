@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators, ValidatorFn} from '@angular/forms'
 
 @Component({
@@ -6,7 +6,7 @@ import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators, V
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent implements OnInit,OnDestroy {
 
   constructor() { }
 
@@ -23,11 +23,14 @@ export class SignupComponent implements OnInit {
 
   showLoader : boolean = false;
 
+  timer : any;
+
   displayLoader(){
     this.showLoader = true;
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.showLoader = false;
     }, 3000);
+
   }
 
   passwordMatchValidator(pass = 'password', confirmPass = 'verifyPassword'): ValidatorFn{
@@ -44,6 +47,10 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(): void {
+    clearTimeout(this.timer);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 
 @Component({
@@ -6,7 +6,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms'
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.css']
 })
-export class FeedbackComponent implements OnInit {
+export class FeedbackComponent implements OnInit,OnDestroy {
 
   constructor() { }
   feedbackForm : FormGroup = new FormGroup({
@@ -16,11 +16,14 @@ export class FeedbackComponent implements OnInit {
 
   showLoader : boolean = false;
 
+  timer : any;
+
   displayLoader(){
     this.showLoader = true;
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.showLoader = false;
     }, 3000);
+
   }
 
   submitFeedbackForm(form : FormGroup){
@@ -28,6 +31,10 @@ export class FeedbackComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(): void {
+    clearTimeout(this.timer);
   }
 
 }
