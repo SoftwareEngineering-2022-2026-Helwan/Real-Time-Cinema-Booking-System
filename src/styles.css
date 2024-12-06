@@ -7,3 +7,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* #cdk-overlay-0{
   overflow: scroll;
 } */
+
+
+:root {
+/* Primary */
+--primary:  #11435A;
+--black: #04141B;
+--white: #E2EBEF;
+--grey: #6F7375;
+--light-blue:#5ABCD5;
+--alert:#9D3915;
+--secondary: #F9BF37;
+--light-list: #567F91;
+--dark-list: #75A9C0;
+}
+
