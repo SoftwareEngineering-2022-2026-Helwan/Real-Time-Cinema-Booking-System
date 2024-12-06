@@ -15,6 +15,7 @@ app.get('/api', (req, res) => {
     res.json({ message: 'Hello from server!' }); 
     let html = Email.getHTML(path.join('../public/emails/welcome.html'));
     let welEmail = new Email("support@mail.com", "YnTQo@example.com");
+    html = html.replace("{{user}}", "John Doe");
     welEmail.sendEmail(html, "Welcome");
 });
 
