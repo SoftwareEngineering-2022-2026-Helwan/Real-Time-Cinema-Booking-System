@@ -1,1 +1,39 @@
+.navbar
+{
+    justify-content: space-between;
+}
 
+span
+{
+    padding: 1em 2em;
+}
+
+.mydiv{
+    color: white;
+}
+.btn
+{
+    margin-right: 2rem;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+mat-sidenav-container
+{
+    height: 100vh;
+}
+mat-sidenav
+{
+    background-color: aquamarine;
+    width: 200px;
+}
+
+mat-sidenav-content
+{
+    background-color: coral;
+    
+}
+.img{
+    border-radius: 50%;
+}
