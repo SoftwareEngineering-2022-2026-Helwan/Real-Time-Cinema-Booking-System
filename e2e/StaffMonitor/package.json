@@ -11,8 +11,10 @@
   "description": "",
   "dependencies": {
     "@types/node": "^22.10.0",
+    "axios": "^1.7.9",
     "mqtt": "^5.10.3",
-    "random": "^5.1.1"
+    "random": "^5.1.1",
+    "uuid": "^11.0.3"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.26.0",
