@@ -1,3 +1,67 @@
-<p>
-  dashboard works!
-</p>
+<!-- cinema dashboard -->
+<div class="border-bottom border-3 py-3 px-5 container text-center">
+  <h2 class=""><i>Cinemas Dasboard</i></h2>
+  <div class="charts row">
+    <div class="col-lg-8 col-sm-6">
+      <div class="chart-container">
+        <app-bar-chart
+          [data_labels]="bardata.labels"
+          [data_datasets]="bardata.datasets"
+        ></app-bar-chart>
+      </div>
+    </div>
+    <div class="col-6 col-lg-4">
+      <div class="chart-container">
+        <app-pie-chart
+          [data_labels]="piedata.labels"
+          [data_datasets]="piedata.datasets"
+        ></app-pie-chart>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- movies dashboard -->
+<div class="border-bottom border-3 py-3 px-5 container text-center">
+  <h2 class=""><i>Movies Dashboard</i></h2>
+  <div class="charts row">
+    <div class="col-lg-8 col-sm-6">
+      <div class="chart-container">
+        <app-bar-chart
+          [data_labels]="bardata2.labels"
+          [data_datasets]="bardata2.datasets"
+          style="width: 400px"
+        ></app-bar-chart>
+      </div>
+    </div>
+    <div class="col-6 col-lg-4">
+      <div class="chart-container">
+        <app-pie-chart
+          [data_labels]="piedata2.labels"
+          [data_datasets]="piedata2.datasets"
+        ></app-pie-chart>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- showtime dashboard -->
+<div class="border-bottom border-3 py-3 px-5 container text-center">
+  <h2 class=""><i>Showtimes Dashboard</i></h2>
+  <div class="charts row">
+    <div class="col-lg-8 col-sm-6">
+      <div class="chart-container">
+        <app-bar-chart
+          [data_labels]="bardata3.labels"
+          [data_datasets]="bardata3.datasets"
+        ></app-bar-chart>
+      </div>
+    </div>
+    <div class="col-6 col-lg-4">
+      <div class="chart-container">
+        <app-pie-chart
+          [data_labels]="piedata3.labels"
+          [data_datasets]="piedata3.datasets"
+        ></app-pie-chart>
+      </div>
+    </div>
+  </div>
+</div>

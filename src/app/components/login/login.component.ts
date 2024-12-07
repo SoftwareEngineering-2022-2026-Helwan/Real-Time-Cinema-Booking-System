@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 
 @Component({
@@ -6,7 +6,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms'
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit,OnDestroy {
 
   constructor() { }
 
@@ -18,11 +18,14 @@ export class LoginComponent implements OnInit {
 
   showLoader : boolean = false;
 
+  timer : any;
+
   displayLoader(){
     this.showLoader = true;
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.showLoader = false;
     }, 3000);
+
   }
 
 
@@ -31,6 +34,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  ngOnDestroy(): void {
+    clearTimeout(this.timer);
   }
 
 }
