@@ -17,6 +17,13 @@
         </button>
     </div>
     <div>
-        <img class="img1" src="../../assets/imgs/images.jpeg" alt="">
+        <button mat-button [matMenuTriggerFor]="menu"><img class="img1" src="../../assets/imgs/images.jpeg" alt=""></button>
+
+        <mat-menu #menu="matMenu">
+             <button mat-menu-item><a href="#" class="link">Profile</a></button>
+             <button mat-menu-item><button style="margin-left: 30px;" class='btn btn-warning' >LogOut</button></button>
+         </mat-menu>
     </div>
 </mat-toolbar>
+
+<hr>
