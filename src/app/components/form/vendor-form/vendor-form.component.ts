@@ -46,7 +46,7 @@ export class VendorFormComponent implements OnInit, OnDestroy {
     }, 1000);
   }
 
-  submitSignupForm(form : FormGroup){
+  submitVendorForm(form : FormGroup){
     console.log(form.value);
   }
 

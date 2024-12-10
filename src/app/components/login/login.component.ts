@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 
 @Component({
@@ -6,23 +7,32 @@ import {FormControl, FormGroup, Validators} from '@angular/forms'
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit,OnDestroy {
+
+  showPass: Boolean = false;
 
   constructor() { }
 
   loginForm : FormGroup = new FormGroup({
     email : new FormControl(null,[Validators.required,Validators.email]),
-    password : new FormControl(null,[Validators.required, Validators.pattern(/^[A-Za-z]\w{7,14}[0-9]$/),
+    password : new FormControl(null,[Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/),
       Validators.minLength(8),Validators.maxLength(15)])
   })
 
   showLoader : boolean = false;
 
+  timer : any;
+
   displayLoader(){
     this.showLoader = true;
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.showLoader = false;
     }, 3000);
+
+  }
+
+  displayPass(){
+    this.showPass = !this.showPass;
   }
 
 
@@ -31,6 +41,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  ngOnDestroy(): void {
+    clearTimeout(this.timer);
   }
 
 }

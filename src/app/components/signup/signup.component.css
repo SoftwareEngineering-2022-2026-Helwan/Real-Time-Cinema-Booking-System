@@ -1,10 +1,35 @@
-form{
+.body{
+  width: 100%;
+  background-image: url('../../../assets/cinema.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 50px;
+}
+
+.body::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.47);
+  z-index: -1;
+}
+
+/* form{
   width: 700px;
   height: auto;
   border-radius: 25px;
   justify-content: center;
-
-}
+  padding-top: 50px;
+} */
 
 form h2{
   margin-top: 2px;
@@ -12,40 +37,40 @@ form h2{
   color: #333;
 }
 
-.form-group{
+/* .form-group{
   margin-bottom: 20px;
   text-align: left;
   padding-bottom: 20px;
-}
+} */
 
-.form-group label{
+/* .form-group label{
   font-weight: bold;
   display: block;
   margin-bottom: 8px;
   color: #555;
-}
+} */
 
-.form-group input{
+/* .form-group input{
   width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 4px;
   transition: border-color 0.3s;
-}
+} */
 
-.name-group{
+/* .name-group{
   display: flex;
-  flex-direction: row;
+  flex-direction: row; */
   /* justify-content: space-between; */
   /* flex: 1; */
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap;
   flex-grow: 2;
-}
+} */
 
-.name-group input{
+/* .name-group input{
   width: 100%;
-  padding-right: 100px;
+  padding-right: 113px;
 }
 
 .another-form-group input{
@@ -56,7 +81,7 @@ form h2{
   display: flex;
   flex-direction: column;
 
-}
+} */
 
 .btn {
   border: 2px solid #11435a;
@@ -76,4 +101,17 @@ form h2{
 
 ::ng-deep mat-spinner circle:hover{
   stroke: white;
+}
+
+.pass-field{
+  position: relative;
+  width: 100%;
+}
+
+
+.pass-field button{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
 }
