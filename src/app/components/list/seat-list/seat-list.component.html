@@ -1,3 +1,13 @@
-<p>
-  seat-list works!
-</p>
+<h4>ShowTimes</h4>
+<mat-form-field>
+  <mat-label>Choose an option</mat-label>
+  <mat-select (selectionChange)="onOptionChange($event.value)">
+    <mat-option value="option1">12:30 PM</mat-option>
+    <mat-option value="option2">03:30 PM</mat-option>
+    <mat-option value="option3">07:00 PM</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<ul>
+  <li *ngFor="let item of selectedArray">{{ item }}</li>
+</ul>
