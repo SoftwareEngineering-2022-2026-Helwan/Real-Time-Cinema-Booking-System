@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators, ValidatorFn} from '@angular/forms'
+import { NewMovie } from 'src/app/interfaces/newMovie.interface';
 
 @Component({
   selector: 'app-movie-form',
@@ -20,7 +21,7 @@ export class MovieFormComponent implements OnInit, OnDestroy {
     description : new FormControl(null,[Validators.required])
   })
 
-  cinemas : string[] = ["Cinema 1","Cinema 2","Cinema 3","Cinema 4"];
+  cinemas : any[] = [{name: "Cinema 1", id : 1}, {name: "Cinema 2", id : 2}, {name: "Cinema 3", id : 3}];
 
   showLoader : boolean = false;
   showResetLoader : boolean = false;

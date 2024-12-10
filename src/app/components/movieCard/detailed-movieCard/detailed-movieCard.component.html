@@ -1,34 +1,44 @@
-<div class="movie-card mat-elevation-z4 d-flex flex-column align-items-start">
-  <!-- Image Section -->
-  <div class="image-section w-100">
-    <img [src]="movie.h_src" alt="Movie Poster" class="img-fluid w-100" />
-  </div>
+<div class="container">
+  <div class="row">
+    <!-- Image Section -->
+    <div
+      class="image-section col-4"
+      style="margin-right: 20px; flex-direction: column"
+    >
+      <img
+        src="../../../../assets/imgs/posters/2.jpg"
+        alt="Movie Poster"
+        class="img-fluid shadow"
+        style="position: relative; border-radius: 5px"
+      />
+    </div>
 
-  <!-- Details Section -->
-  <div class="details-section w-100 p-3">
-    <div class="detail d-flex justify-content-between align-items-center">
-      <h3 mat-subheader class="label">Name</h3>
-      <p class="value">{{ movie.name }}</p>
-    </div>
-    <div class="detail d-flex justify-content-between align-items-center">
-      <h3 mat-subheader class="label">Category</h3>
-      <p class="value">{{ movie.category }}</p>
-    </div>
-    <div class="detail d-flex justify-content-between align-items-center">
-      <h3 mat-subheader class="label">Duration</h3>
-      <p class="value">{{ movie.duration }}</p>
-    </div>
-    <div class="detail d-flex justify-content-between align-items-center">
-      <h3 mat-subheader class="label">Cinema</h3>
-      <p class="value">{{ movie.cinema }}</p>
-    </div>
-    <div class="detail d-flex justify-content-between align-items-center">
-      <h3 mat-subheader class="label">Starring</h3>
-      <p class="value">{{ movie.starring }}</p>
-    </div>
-    <div class="detail d-flex justify-content-between align-items-center">
-      <h3 mat-subheader class="label">Description</h3>
-      <p class="value">{{ movie.description }}</p>
+    <!-- Details Section -->
+    <div class="details-section p-3 col-6">
+      <div class="detail d-flex justify-content-between align-items-center">
+        <h3 mat-subheader class="label">Name</h3>
+        <p class="value">{{ movie.name }}</p>
+      </div>
+      <div class="detail d-flex justify-content-between align-items-center">
+        <h3 mat-subheader class="label">Category</h3>
+        <p class="value">{{ movie.category }}</p>
+      </div>
+      <div class="detail d-flex justify-content-between align-items-center">
+        <h3 mat-subheader class="label">Duration</h3>
+        <p class="value">{{ movie.duration }}</p>
+      </div>
+      <div class="detail d-flex justify-content-between align-items-center">
+        <h3 mat-subheader class="label">Cinema</h3>
+        <p class="value">{{ movie.cinema }}</p>
+      </div>
+      <div class="detail d-flex justify-content-between align-items-center">
+        <h3 mat-subheader class="label">Starring</h3>
+        <p class="value">{{ movie.starring }}</p>
+      </div>
+      <div class="detail d-flex justify-content-between align-items-center">
+        <h3 mat-subheader class="label">Description</h3>
+        <p class="value">{{ movie.description }}</p>
+      </div>
     </div>
   </div>
 </div>

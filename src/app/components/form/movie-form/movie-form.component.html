@@ -135,7 +135,7 @@
         <label for="cinema" class="form-label">Cinema</label>
         <select id="cinema" class="form-select" formControlName="cinema">
           <ng-container *ngFor="let cinema of cinemas">
-            <option [value]="cinema">{{ cinema }}</option>
+            <option [value]="cinema.id">{{ cinema.name }}</option>
           </ng-container>
         </select>
         <div

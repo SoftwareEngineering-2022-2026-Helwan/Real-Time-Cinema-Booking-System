@@ -1,39 +1,77 @@
 /* Movie Card Styling */
-.movie-card {
-  max-width: 1000px;
-  margin: auto;
+.container {
   background-color: #f5f5f5;
   border-radius: 8px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #11435a;
+  position: relative;
+  width: 100%;
+  padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Container */
-.image-container {
-  width: 100%; /* Full width */
-  height: auto;
-  position: relative;
-}
 
-.image-container img {
-  display: block;
-  width: 100%; /* Ensure the image spans the container width */
-  height: 400px; /* Set a fixed height for the container */
-  object-fit: cover; /* Ensures the image fills the container */
-  object-position: left; /* Align the image to the left */
-}
 
 /* Details Section */
 .details-section {
   padding: 16px;
   font-family: Arial, sans-serif;
+  width: 100vh;
+}
+
+@media (max-width: 768px) {
+  .container{
+    flex-direction: row;
+  }
+  .image-section{
+    width: 100%;
+  }
+  .details-section {
+    justify-items: flex-start;
+    width: 100%;
+  }
+  .detail{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 .detail {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
+  padding: 25px 0;
   border-bottom: 1px solid #ccc;
+}
+
+@media (max-width: 1272px) {
+  .details-section{
+    width: 95vh;
+  }
+  .detail{
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .details-section{
+    width: 75vh;
+  }
+  .detail{
+    padding: 15px 0;
+  }
+}
+
+@media (max-width: 990px) {
+  .details-section{
+    width: 55vh;
+  }
+  .detail{
+    padding: 5px 0;
+  }
 }
 
 .detail:last-child {
