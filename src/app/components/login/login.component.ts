@@ -8,6 +8,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms'
 })
 export class LoginComponent implements OnInit,OnDestroy {
 
+  showPass: Boolean = false;
+
   constructor() { }
 
   loginForm : FormGroup = new FormGroup({
@@ -26,6 +28,10 @@ export class LoginComponent implements OnInit,OnDestroy {
       this.showLoader = false;
     }, 3000);
 
+  }
+
+  displayPass(){
+    this.showPass = !this.showPass;
   }
 
 

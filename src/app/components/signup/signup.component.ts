@@ -8,6 +8,9 @@ import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators, V
 })
 export class SignupComponent implements OnInit,OnDestroy {
 
+  showPass: Boolean = false;
+  showVerifyPass: Boolean = false;
+
   constructor() { }
 
   signupForm : FormGroup = new FormGroup({
@@ -31,6 +34,13 @@ export class SignupComponent implements OnInit,OnDestroy {
       this.showLoader = false;
     }, 3000);
 
+  }
+
+  displayPass(){
+    this.showPass = !this.showPass;
+  }
+  displayVerifyPass(){
+    this.showVerifyPass = !this.showVerifyPass;
   }
 
   passwordMatchValidator(pass = 'password', confirmPass = 'verifyPassword'): ValidatorFn{

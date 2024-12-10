@@ -154,13 +154,26 @@
           </div>
           <div class="mb-3 form-group">
             <label for="pass" class="form-label">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="pass"
-              placeholder="***************"
-              formControlName="password"
-            />
+            <div class="pass-field">
+              <input
+                [type]="showPass ? 'text' : 'password'"
+                class="form-control"
+                id="pass"
+                placeholder="***************"
+                formControlName="password"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="displayPass()"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="showPass"
+              >
+                <mat-icon>{{
+                  showPass ? "visibility" : "visibility_off"
+                }}</mat-icon>
+              </button>
+            </div>
             <div
               class="alert alert-danger"
               *ngIf="
@@ -194,13 +207,26 @@
           </div>
           <div class="mb-3 form-group">
             <label for="verifyPass" class="form-label">Verify Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="verifyPass"
-              placeholder="***************"
-              formControlName="verifyPassword"
-            />
+            <div class="pass-field">
+              <input
+                [type]="showVerifyPass ? 'text' : 'password'"
+                class="form-control"
+                id="verifyPass"
+                placeholder="***************"
+                formControlName="verifyPassword"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="displayVerifyPass()"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="showVerifyPass"
+              >
+                <mat-icon>{{
+                  showVerifyPass ? "visibility" : "visibility_off"
+                }}</mat-icon>
+              </button>
+            </div>
             <div
               class="alert alert-danger"
               *ngIf="
