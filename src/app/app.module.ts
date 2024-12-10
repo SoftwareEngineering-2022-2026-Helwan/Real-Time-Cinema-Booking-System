@@ -51,9 +51,14 @@ import {MovieListComponent} from "./components/list/movie-list/movie-list.compon
 import { TicketComponent } from './components/ticket/ticket.component';
 import { SlideshowComponent } from './components/list/slideshow/slideshow.component';
 import { SeatListComponent } from './components/list/seat-list/seat-list.component';
+import {VendorMovieListComponent} from "./components/list/vendor-movie-list/vendor-movie-list.component";
+import {VendorMovieListItemComponent} from "./components/list-item/vendor-movie-list-item/vendor-movie-list-item.component";
+
 //#endregion
 const COMPONETS = 
 [
+    VendorMovieListItemComponent,
+    VendorMovieListComponent,
     CustomerHeaderComponent,
     AdminHeaderComponent,
     GustHeaderComponent,
