@@ -1,3 +1,24 @@
-<p>
-  reservation-list-item works!
-</p>
+<div class="reservation-list">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let reservation of reservations">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ reservation.movie }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ reservation.showTime }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-card class="movie-details">
+        <h3>{{ reservation.movie }}</h3>
+        <p><strong>Show Time:</strong> {{ reservation.showTime }}</p>
+        <p><strong>Reservation number:</strong> {{ reservation.reservationNumber }}</p>
+        <p><strong>Seats:</strong> {{ reservation.seats.join(', ') }}</p>
+        <p><strong>Total:</strong> ${{ reservation.total }}</p>
+      <div class="cancel-button">
+        <button mat-button color="mat-warn" (click)="cancelReservation(reservation.reservationNumber)" style="background-color: rgb(182, 48, 48); border-radius: 20px;padding: 8px 16px;">Cancel</button>
+      </div>
+    </mat-card>
+  </mat-expansion-panel>
+</mat-accordion>
+</div>

@@ -1,0 +1,21 @@
+.feedback-list {
+    background-color: #1e1e1e;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+mat-expansion-panel {
+    margin-bottom: 8px;
+  }
+  
+  mat-expansion-panel-header {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  mat-expansion-panel .p-3 {
+    font-size: 14px;
+  }
+  

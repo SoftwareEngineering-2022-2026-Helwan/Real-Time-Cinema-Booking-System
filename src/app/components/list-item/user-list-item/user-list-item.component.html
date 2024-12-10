@@ -1,3 +1,37 @@
-<p>
-  users-list-item works!
-</p>
+<div class="container mt-4">
+    <h5 class="text-light">List</h5>
+    <div class="list-group bg-light p-3 rounded">
+      <!-- Header Row -->
+      <div
+        class="list-group-item d-flex justify-content-between align-items-center fw-bold"
+        style="background-color: #f1f1f1; border-radius: 8px;"
+      >
+        <span>Name</span>
+        <span>Phone</span>
+        <span>Number of Cinemas</span>
+        <span>Action</span>
+      </div>
+  
+      <!-- Dynamic Rows -->
+      <div
+        *ngFor="let vendor of VendorList; let i = index"
+        class="list-group-item d-flex justify-content-between align-items-center"
+        [ngStyle]="{
+          'background-color': i % 2 === 0 ? '#dbe9f1' : '#549aab',
+          'border-radius': '8px',
+          'color': i % 2 === 0 ? '#000' : '#fff'
+        }"
+      >
+        <span>{{ vendor.name }}</span>
+        <span>{{ vendor.phone }}</span>
+        <span>{{ vendor.numberOfCinemas }}</span>
+        <button
+          class="btn btn-warning rounded-pill text-dark"
+          (click)="editVendor(vendor.name)"
+        >
+          Edit
+        </button>
+      </div>
+    </div>
+  </div>
+  

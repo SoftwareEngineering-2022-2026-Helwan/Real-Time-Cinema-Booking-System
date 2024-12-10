@@ -1,0 +1,40 @@
+.container {
+    max-width: 800px;
+  }
+  
+  .container {
+    max-width: 800px;
+  }
+  
+  .list-group {
+    border: none;
+  }
+  
+  .list-group-item {
+    display: grid; 
+  grid-template-columns: 25% 25% 20% 30%; 
+  align-items: center;
+  padding: 1px 20px;
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0.5rem 0.5rem;
+}
+
+    
+  
+  .list-group-item:first-child {
+    font-weight: bold; 
+  }
+  
+  
+  .btn-warning {
+    background-color: #f0ad4e; 
+    color: #000; 
+  }
+  
+  .btn-warning:hover {
+    background-color: #d8933d; 
+  }

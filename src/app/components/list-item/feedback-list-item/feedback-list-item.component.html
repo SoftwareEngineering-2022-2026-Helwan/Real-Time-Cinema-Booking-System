@@ -1,3 +1,14 @@
-<p>
-  feedback-list-item works!
-</p>
+<div class="container mt-4">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let feedback of feedbackList">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ feedback.email }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="p-3" style="background-color: #dbe9f1; border-radius: 8px; color: #000;">
+        <p>{{ feedback.feedback }}</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
