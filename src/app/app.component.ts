@@ -1,6 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { SignupComponent } from './components/signup/signup.component';
+import { inject } from '@angular/core';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +17,17 @@ export class AppComponent {
     this.openButton.nativeElement.click();
   }
 
+
+
+  inj = inject(AuthService);
+
   constructor(public dialog: MatDialog) {
 
+    this.inj.setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
+    console.log(this.inj.decodeToken());
   }
+
+
 
   openDialog(): void {
     const dialogRef = this.dialog.open(SignupComponent);
@@ -51,6 +61,7 @@ ngOnInit(): void {
   setTimeout(() => {
     this.ClickButton();
   },2000);
+
 }
 
 

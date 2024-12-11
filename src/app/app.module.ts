@@ -10,7 +10,7 @@ import {GoogleMapsModule} from '@angular/google-maps';
 import {Chart, registerables} from "chart.js";
 Chart.register(...registerables);
 
-//#region Components 
+//#region Components
 import {CustomerHeaderComponent} from "./components/header/customer-header/customer-header.component";
 import {AdminHeaderComponent} from "./components/header/admin-header/admin-header.component";
 import {GustHeaderComponent} from "./components/header/gust-header/gust-header.component";
@@ -38,7 +38,7 @@ import {SeatComponent} from "./components/seat/seat.component";
 import {AbstractMovieCardComponent} from "./components/movieCard/abstract-movieCard/abstract-movieCard.component";
 import {DetailedMovieCardComponent} from "./components/movieCard/detailed-movieCard/detailed-movieCard.component";
 import {ProfileComponent} from "./components/profile/profile.component";
-import { VendorHomeComponent } from './components/home/vendor-home/vendor-home.component'; 
+import { VendorHomeComponent } from './components/home/vendor-home/vendor-home.component';
 import { GuestHomeComponent } from './components/home/guest-home/guest-home.component';
 import { AdminHomeComponent } from './components/home/admin-home/admin-home.component';
 import { FaqComponent } from './components/faq/faq.component';
@@ -55,7 +55,7 @@ import {VendorMovieListComponent} from "./components/list/vendor-movie-list/vend
 import {VendorMovieListItemComponent} from "./components/list-item/vendor-movie-list-item/vendor-movie-list-item.component";
 
 //#endregion
-const COMPONETS = 
+const COMPONETS =
 [
     VendorMovieListItemComponent,
     VendorMovieListComponent,
@@ -87,7 +87,7 @@ const COMPONETS =
     AdminHomeComponent,
     FaqComponent,
     UsersListComponent,
-    CinemaListComponent,    
+    CinemaListComponent,
     ReservationListComponent,
     FeedbackListComponent,
     MovieListComponent,
@@ -107,6 +107,7 @@ import {VendorService} from './services/vendor/vendor.service';
 import {PersonService} from './services/person/person.service';
 import {CheckoutService} from './services/checkout/checkout.service';
 import {FeedbackService} from './services/feedback/feedback.service';
+import { AuthService } from './services/auth/auth.service';
 //#endregion
 const SERVICES = [
     AdminService,
@@ -117,7 +118,8 @@ const SERVICES = [
     VendorService,
     PersonService,
     CheckoutService,
-    FeedbackService
+    FeedbackService,
+    AuthService
 ]
 
 
