@@ -1,0 +1,87 @@
+.container {
+    max-width: 800px;
+  }
+  
+  .list-group {
+    border: none;
+  }
+  
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #dbe9f1;
+  }
+  
+  .header {
+    background-color: #f1f1f1;
+  }
+  
+  .list-group-item:nth-child(odd) {
+    background-color: #549aab;
+    color: #070606;
+  }
+  
+  .list-group-item span {
+    flex: 1;  
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .gap-2 {
+    gap: 10px;
+  }
+  .action-buttons button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  .btn-light {
+    background-color: #c8cccf;
+    color: #000;
+  }
+  
+  .btn-warning {
+    background-color: #f0ad4e;
+    color: #000;
+  }
+  
+  .btn-light:hover,
+  .btn-warning:hover {
+    background-color: #d8933d;
+  }
+  
+  .modal-content {
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .form-select, .form-control {
+    margin-bottom: 10px;
+  }
+  
+  #editModal .btn {
+    border-radius: 50px; 
+    padding: 5px 10px; 
+    font-size: 12px; 
+  }
+  .text-end{
+    margin: 0 5px;
+  }
+  button.w-100 {
+    width: 100%;
+  }
+  
+  button.mt-2 {
+    margin-top: 10px;
+  }
+  
