@@ -107,6 +107,7 @@ import {VendorService} from './services/vendor/vendor.service';
 import {PersonService} from './services/person/person.service';
 import {CheckoutService} from './services/checkout/checkout.service';
 import {FeedbackService} from './services/feedback/feedback.service';
+import { AuthService } from './services/auth/auth.service';
 //#endregion
 const SERVICES = [
     AdminService,
@@ -117,7 +118,8 @@ const SERVICES = [
     VendorService,
     PersonService,
     CheckoutService,
-    FeedbackService
+    FeedbackService,
+    AuthService
 ]
 
 
