@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { SignupComponent } from './components/signup/signup.component';
 
@@ -9,6 +9,11 @@ import { SignupComponent } from './components/signup/signup.component';
 })
 export class AppComponent {
 
+  @ViewChild('openButton',{static: false}) openButton!: ElementRef;
+
+  ClickButton(){
+    this.openButton.nativeElement.click();
+  }
 
   constructor(public dialog: MatDialog) {
 
@@ -42,6 +47,11 @@ export class AppComponent {
     }
   ];
 
+ngOnInit(): void {
+  setTimeout(() => {
+    this.ClickButton();
+  },2000);
+}
 
 
 }
