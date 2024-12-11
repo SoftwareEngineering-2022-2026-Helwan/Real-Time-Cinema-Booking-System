@@ -1,0 +1,63 @@
+.body{
+  width: 100%;
+  background-image: url('../../../assets/imgs/cinema.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 50px;
+}
+
+.body::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.47);
+  z-index: -1;
+}
+
+form h2{
+  margin-top: 2px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.btn {
+  border: 2px solid #11435a;
+  border-radius: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn:hover{
+  background-color: #11435a;
+  color: white;
+}
+
+.reset{
+  margin-top: 0px;
+  border-radius: 10px;
+  width: 100%;
+  justify-content: center;
+  background-color: #11435a;
+  color: white;
+}
+
+::ng-deep .reset mat-spinner circle{
+  stroke: white;
+}
+
+::ng-deep mat-spinner circle{
+  stroke: #11435a;
+}
+
+::ng-deep mat-spinner circle:hover{
+  stroke: white;
+}
