@@ -53,10 +53,20 @@ import { SlideshowComponent } from './components/list/slideshow/slideshow.compon
 import { SeatListComponent } from './components/list/seat-list/seat-list.component';
 import {VendorMovieListComponent} from "./components/list/vendor-movie-list/vendor-movie-list.component";
 import {VendorMovieListItemComponent} from "./components/list-item/vendor-movie-list-item/vendor-movie-list-item.component";
+import { VendorListPageComponent} from "./pages/admin/vendor-list-page/vendor-list-page.component";
+import {VendorMovieListPageComponent} from "./pages/vendor/vendor-movie-list-page/vendor-movie-list-page.component";
+import { ReservationPageComponent } from './pages/customer/reservation-page/reservation-page.component';
+import { ListMoviePageComponent } from './pages/customer/list-movie-page/list-movie-page.component';
+import { CinemaListPageComponent } from './pages/vendor/cinema-list-page/cinema-list-page.component';
 
 //#endregion
 const COMPONETS = 
 [
+    CinemaListPageComponent,
+    ListMoviePageComponent,
+    VendorMovieListPageComponent,
+    ReservationPageComponent,
+    VendorListPageComponent,
     VendorMovieListItemComponent,
     VendorMovieListComponent,
     CustomerHeaderComponent,
