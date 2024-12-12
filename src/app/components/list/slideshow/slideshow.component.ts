@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class SlideshowComponent implements OnInit {
 
   movies = [
-    {image: '../../assets/imgs/images (1).jpg'},
-    {image: '../../assets/imgs/images (2).jpg'},
-    {image: '../../assets/imgs/images (3).jpg'},
-    {image: '../../assets/imgs/images.jpg'}
+    {image: 'https://via.placeholder.com/800x400?text=New+Image+2'},
+    {image: 'https://via.placeholder.com/800x400?text=New+Image+1'},
+    {image: 'https://via.placeholder.com/800x400?text=New+Image+3'},
+    {image: 'https://via.placeholder.com/800x400?text=New+Image+4'}
   ];
   constructor() { }
 
