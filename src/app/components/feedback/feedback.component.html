@@ -1,34 +1,33 @@
-<div
-  class="container"
-  style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    color: #11435a;
-  "
->
+<div class="body">
   <div
-    class="row"
+    class="container"
     style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #11435a;
+      position: relative;
       width: 100%;
-      max-width: 400px;
-      background: #e2ebef;
+      max-width: 550px;
+      background: rgba(255, 255, 255, 0.8);
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      text-align: center;
+      margin-top: 40px;
     "
   >
     <form
       [formGroup]="feedbackForm"
       (ngSubmit)="submitFeedbackForm(feedbackForm)"
+      class="row g-3"
     >
       <div class="container">
-        <div class="profile_img">
+        <div
+          class="profile_img"
+          style="justify-content: center; align-items: center; display: flex"
+        >
           <img
-            src="../../../assets/imgs/feedback.jpg"
+            src="../../../assets/imgs/pfp.jpg"
             alt=""
             class="img-fluid shadow"
             style="
@@ -40,8 +39,8 @@
           />
         </div>
       </div>
-      <h2>Feedback</h2>
-      <div class="mb-3 form-group">
+      <h2 style="display: flex; justify-content: center">Feedback</h2>
+      <div class="col-md-12">
         <label for="email" class="form-label">Email</label>
         <input
           type="email"
@@ -75,13 +74,13 @@
           </p>
         </div>
       </div>
-      <div class="mb-3 form-group">
+      <div class="col-md-12">
         <label for="description" class="form-label">Feedback</label>
         <textarea
           class="form-control"
           id="description"
           rows="3"
-          placeholder="Enter your feedback here"
+          placeholder="Enter your feedback here..."
           formControlName="feedback"
         ></textarea>
         <div
@@ -106,20 +105,22 @@
           </p>
         </div>
       </div>
-      <button
-        type="submit"
-        class="btn"
-        [disabled]="feedbackForm.invalid"
-        (click)="displayLoader()"
-      >
-        <span *ngIf="!showLoader">Submit</span>
-        <div style="justify-content: center; display: flex">
-          <mat-spinner
-            style="width: 3em; height: 2em"
-            *ngIf="showLoader"
-          ></mat-spinner>
-        </div>
-      </button>
+      <div class="col-md-12">
+        <button
+          type="submit"
+          class="btn"
+          [disabled]="feedbackForm.invalid"
+          (click)="displayLoader()"
+        >
+          <span *ngIf="!showLoader">Submit</span>
+          <div style="justify-content: center; display: flex">
+            <mat-spinner
+              style="width: 3em; height: 2em"
+              *ngIf="showLoader"
+            ></mat-spinner>
+          </div>
+        </button>
+      </div>
     </form>
   </div>
 </div>

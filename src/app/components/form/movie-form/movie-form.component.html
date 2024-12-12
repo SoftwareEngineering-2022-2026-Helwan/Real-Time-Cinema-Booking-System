@@ -1,3 +1,282 @@
-<p>
-  movie-form works!
-</p>
+<div class="body">
+  <div
+    class="container"
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #11435a;
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    "
+  >
+    <form
+      [formGroup]="movieForm"
+      (ngSubmit)="submitMovieForm(movieForm)"
+      class="row g-3"
+    >
+      <div class="container">
+        <div
+          class="profile_img"
+          style="justify-content: center; align-items: center; display: flex"
+        >
+          <img
+            src="../../../../assets/imgs/movie.jpeg"
+            alt=""
+            class="img-fluid shadow"
+            style="
+              position: relative;
+              border-radius: 50%;
+              width: 70px;
+              justify-content: center;
+            "
+          />
+        </div>
+      </div>
+      <h2 style="display: flex; justify-content: center">Add Movie</h2>
+      <div class="col-md-12">
+        <label for="title" class="form-label">Movie Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          placeholder="e.g. Despicable me 4"
+          formControlName="title"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            movieForm.get('title')?.errors && movieForm.get('title')?.touched
+          "
+          style="
+            height: max-content;
+            min-height: 30px;
+            max-height: 100px;
+            margin-top: 3px;
+            padding-top: 4px;
+            padding-bottom: 0px;
+            overflow: none;
+            color: #666;
+          "
+        >
+          <p *ngIf="movieForm.get('title')?.getError('required')">
+            Movie title is required
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="category" class="form-label">Category</label>
+        <input
+          type="text"
+          class="form-control"
+          id="category"
+          placeholder="e.g. Animation"
+          formControlName="category"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            movieForm.get('category')?.errors &&
+            movieForm.get('category')?.touched
+          "
+          style="
+            height: max-content;
+            min-height: 30px;
+            max-height: 100px;
+            margin-top: 3px;
+            padding-top: 4px;
+            padding-bottom: 0px;
+            overflow: none;
+            color: #666;
+          "
+        >
+          <p *ngIf="movieForm.get('title')?.getError('required')">
+            Category is required
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="duration" class="form-label">Duration</label>
+        <input
+          type="text"
+          class="form-control"
+          id="duration"
+          placeholder="e.g. 1h 34m"
+          formControlName="duration"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            movieForm.get('duration')?.errors &&
+            movieForm.get('duration')?.touched
+          "
+          style="
+            height: max-content;
+            min-height: 30px;
+            max-height: 100px;
+            margin-top: 3px;
+            padding-top: 4px;
+            padding-bottom: 0px;
+            overflow: none;
+            color: #666;
+          "
+        >
+          <p *ngIf="movieForm.get('title')?.getError('required')">
+            Duration is required
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="cinema" class="form-label">Cinema</label>
+        <select id="cinema" class="form-select" formControlName="cinema">
+          <ng-container *ngFor="let cinema of cinemas">
+            <option [value]="cinema.id">{{ cinema.name }}</option>
+          </ng-container>
+        </select>
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            movieForm.get('cinema')?.errors && movieForm.get('cinema')?.touched
+          "
+          style="
+            height: max-content;
+            min-height: 30px;
+            max-height: 100px;
+            margin-top: 3px;
+            padding-top: 4px;
+            padding-bottom: 0px;
+            overflow: none;
+            color: #666;
+          "
+        >
+          <p *ngIf="movieForm.get('cinema')?.getError('required')">
+            Cinema is required
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="image" class="form-label">Movie Poster</label>
+        <input
+          type="file"
+          class="form-control"
+          id="image"
+          formControlName="image"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            movieForm.get('image')?.errors && movieForm.get('image')?.touched
+          "
+          style="
+            height: max-content;
+            min-height: 30px;
+            max-height: 100px;
+            margin-top: 3px;
+            padding-top: 4px;
+            padding-bottom: 0px;
+            overflow: none;
+            color: #666;
+          "
+        >
+          <p *ngIf="movieForm.get('image')?.getError('required')">
+            Poster is required
+          </p>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="starring" class="form-label">Starring</label>
+        <textarea
+          class="form-control"
+          id="starring"
+          rows="3"
+          placeholder="e.g. Steve Carell ,Kristen Wiig ,Pierre Coffin"
+          formControlName="starring"
+        ></textarea>
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            movieForm.get('starring')?.errors &&
+            movieForm.get('starring')?.touched
+          "
+          style="
+            height: max-content;
+            min-height: 30px;
+            max-height: 100px;
+            margin-top: 3px;
+            padding-top: 4px;
+            padding-bottom: 0px;
+            overflow: none;
+            color: #666;
+          "
+        >
+          <p *ngIf="movieForm.get('starring')?.getError('required')">
+            Starring List is required
+          </p>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          class="form-control"
+          id="description"
+          rows="3"
+          placeholder="Enter your description here..."
+          formControlName="description"
+        ></textarea>
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            movieForm.get('description')?.errors &&
+            movieForm.get('description')?.touched
+          "
+          style="
+            height: max-content;
+            min-height: 30px;
+            max-height: 100px;
+            margin-top: 3px;
+            padding-top: 4px;
+            padding-bottom: 0px;
+            overflow: none;
+            color: #666;
+          "
+        >
+          <p *ngIf="movieForm.get('description')?.getError('required')">
+            Description is required
+          </p>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <button
+          type="submit"
+          class="btn"
+          [disabled]="movieForm.invalid"
+          (click)="displayLoader()"
+        >
+          <span *ngIf="!showLoader">Submit</span>
+          <div style="justify-content: center; display: flex">
+            <mat-spinner
+              style="width: 3em; height: 2em"
+              *ngIf="showLoader"
+            ></mat-spinner>
+          </div>
+        </button>
+      </div>
+      <div class="col-md-12">
+        <button type="reset" class="btn reset" (click)="displayResetLoader()">
+          <span *ngIf="!showResetLoader">Reset</span>
+          <div style="justify-content: center; display: flex">
+            <mat-spinner
+              style="width: 3em; height: 2em"
+              *ngIf="showResetLoader"
+            ></mat-spinner>
+          </div>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 
@@ -7,6 +8,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit,OnDestroy {
+
+  showPass: Boolean = false;
 
   constructor() { }
 
@@ -26,6 +29,10 @@ export class LoginComponent implements OnInit,OnDestroy {
       this.showLoader = false;
     }, 3000);
 
+  }
+
+  displayPass(){
+    this.showPass = !this.showPass;
   }
 
 
