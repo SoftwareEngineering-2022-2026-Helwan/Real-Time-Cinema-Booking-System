@@ -51,9 +51,14 @@ import {MovieListComponent} from "./components/list/movie-list/movie-list.compon
 import { TicketComponent } from './components/ticket/ticket.component';
 import { SlideshowComponent } from './components/list/slideshow/slideshow.component';
 import { SeatListComponent } from './components/list/seat-list/seat-list.component';
+
+import { NotAuthorizedComponent } from './components/errors/NotAuthorized/NotAuthorized.component';
+import { NotFoundComponent } from './components/errors/NotFound/NotFound.component';
 //#endregion
 const COMPONETS = 
 [
+    NotAuthorizedComponent,
+    NotFoundComponent,
     CustomerHeaderComponent,
     AdminHeaderComponent,
     GustHeaderComponent,
