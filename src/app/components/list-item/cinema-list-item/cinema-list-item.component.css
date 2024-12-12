@@ -1,0 +1,56 @@
+.container {
+    max-width: 800px;
+  }
+  
+  
+  .list-group {
+    border: none;
+    padding: 0;
+  }
+  
+  .list-group-item {
+    display: grid; 
+    grid-template-columns: 25% 25% 20% 30%; 
+    align-items: center;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    margin-bottom: 10px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0.5rem 0.5rem;
+  }
+  
+  .header-row {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  
+  .column-name {
+    text-align: left;
+  }
+  
+  .column-location {
+    text-align: left;
+    margin-left: -80px;
+  }
+  
+  .column-movies {
+    text-align: center;
+  }
+  
+  .column-action {
+    text-align: right;
+  }
+  
+  
+  .btn-warning {
+    background-color: #f0ad4e;
+    color: #000;
+  }
+  
+  .btn-warning:hover {
+    background-color: #d8933d;
+  }
+  

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-user-list-item',
@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class UsersListItemComponent implements OnInit {
 
   constructor() { }
+  @Input() VendorList: any[] = [];
+  displayedColumns = ['name', 'phone', 'numberOfCinemas', 'action'];
+  editVendor(vendorName: string){
+    console.log("Edit ",vendorName);
+  }
+
 
   ngOnInit() {
   }

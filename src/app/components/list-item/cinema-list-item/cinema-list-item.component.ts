@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 
 @Component({
   selector: 'app-cinema-list-item',
@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class CinemaListItemComponent implements OnInit {
 
   constructor() { }
+
+  @Input()  cinemaList: any[] = [];
+  displayedColumns = ['name', 'location', 'numberOfMovies', 'action'];
+  editCinema(cinemaName: string) {
+    console.log("edit ",cinemaName);
+  }
 
   ngOnInit() {
   }

@@ -10,6 +10,10 @@ import {GoogleMapsModule} from '@angular/google-maps';
 
 import {Chart, registerables} from "chart.js";
 Chart.register(...registerables);
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatButtonModule } from '@angular/material/button';
+
 
 //#region Components
 import {CustomerHeaderComponent} from "./components/header/customer-header/customer-header.component";
@@ -152,7 +156,11 @@ const SERVICES = [
     GoogleMapsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatSortModule,
+    MatButtonModule,
+
   ],
   providers: [SERVICES],
   bootstrap: [AppComponent]

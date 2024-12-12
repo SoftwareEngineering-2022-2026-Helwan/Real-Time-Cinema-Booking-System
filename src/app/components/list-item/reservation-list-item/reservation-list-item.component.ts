@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 
 @Component({
   selector: 'app-reservation-list-item',
@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class ReservationListItemComponent implements OnInit {
 
   constructor() { }
+  @Input() reservations: any[] = [];
+
+
+  cancelReservation(reservationNumber : number) {
+    console.log("canceled!", reservationNumber);
+  }
+
 
   ngOnInit() {
   }

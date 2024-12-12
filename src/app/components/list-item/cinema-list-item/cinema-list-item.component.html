@@ -1,3 +1,96 @@
-<p>
-  cinema-list-item works!
-</p>
+<div class="container mt-4">
+  <h5 class="text-light">Cinema List</h5>
+  <mat-table [dataSource]="cinemaList" matSort class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let cinema">{{ cinema.name }}</mat-cell>
+    </ng-container>
+
+    <!-- Location Column -->
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Location</mat-header-cell>
+      <mat-cell *matCellDef="let cinema">{{ cinema.location }}</mat-cell>
+    </ng-container>
+
+    <!-- Number of Movies Column -->
+    <ng-container matColumnDef="numberOfMovies">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Number of Movies</mat-header-cell>
+      <mat-cell *matCellDef="let cinema">{{ cinema.numberOfMovies }}</mat-cell>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+      <mat-cell *matCellDef="let cinema">
+        <button mat-raised-button color="primary" (click)="editCinema(cinema.name)">Edit</button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Table Header and Rows -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
+<style>
+.container {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-table {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  background-color:#8f999b;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+mat-header-cell, mat-cell {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+  font-size: 20px;
+  color: black !important;
+}
+
+mat-header-cell {
+  font-weight: bold;
+  background-color: #4a90e2;
+  color: #ffffff;
+  border-bottom: 2px solid #3561a7;
+}
+
+mat-cell {
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 1px solid #dddddd;
+}
+
+mat-row:nth-child(odd) mat-cell {
+  background-color:#e2e4e7;
+}
+
+mat-row:hover mat-cell {
+  background-color: #eaf4fc;
+}
+
+button {
+  border-radius: 8px;
+  text-transform: none;
+  background-color: #ff7043;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 6px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color:  #87a3b2;
+}
+</style>
