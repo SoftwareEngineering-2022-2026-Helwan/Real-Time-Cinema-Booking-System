@@ -8,11 +8,11 @@ export class AuthService {
 
 
 setToken(token: string){
-  localStorage.setItem('token', token);
+  sessionStorage.setItem('token', token);
 }
 
 decodeToken(): any{
-  return jwtDecode(localStorage.getItem('token')??"");
+  return jwtDecode(sessionStorage.getItem('token')??"");
 }
 
 constructor() { }
