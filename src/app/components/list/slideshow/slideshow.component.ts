@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlideshowComponent implements OnInit {
   movies = [
-    {image: '../../../../assets/imgs/maxresdefault.jpg'},
-    {image: '../../../../assets/imgs/maxresdefault (1).jpg'},
-    {image: '../../../../assets/imgs/BeautyAndTheBeast-LiveAction-HollywoodEnglishMoviePoster_23bd9882-b84d-4070-a69b-e72d8a87633e.jpg'},
-    {image: '../../../../assets/imgs/x720.jpg'}
+    {image: '../../../../assets/imgs/postersH/1.jpg'},
+    {image: '../../../../assets/imgs/postersH/2.jpg'},
+    {image: '../../../../assets/imgs/postersH/3.jpg'},
+    {image: '../../../../assets/imgs/postersH/4.jpg'},
+    {image: '../../../../assets/imgs/postersH/5.jpg'}
+
   ];
 
   constructor() { }

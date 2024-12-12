@@ -1,10 +1,12 @@
-.h1 {
+/* .h1 {
     text-align: center;
     padding-top: 90px;
     color: white;
-}
+}*/
 .container-fluid {
-    background-color: #11435A;
+  width: 100%;
+    background-color: #eee;
+    padding-top: 70px;
 }
 
 .container {
@@ -13,6 +15,13 @@
     padding-bottom: 20px;
 }
 
+p{
+  color: var(--primary);
+  font-size: 20px;
+  font-style: italic;
+}
+
+/*
 .container1 {
     width: 100%;
     height: auto;
@@ -25,6 +34,7 @@
     width: 250px;
     height: 370px;
 }
+    */
 .poster {
     float: left;
     margin-top: 20px;
@@ -38,6 +48,7 @@
     width: 100%;
     height: 100%;
 }
+    /*
 .poster1 img {
     width: 100%;
     height: 100%;
@@ -126,17 +137,17 @@ h3 {
 p {
     font-size: 1em;
     color: #555;
-}
+} */
 
 /* Responsive design for small screens (max-width: 767px) */
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .container1 {
         padding-left: 20px;
     }
     .container{
         height: auto;
     }
-    .poster1{ 
+    .poster1{
         float: none;
         margin-left: 0;
         width: 100%;
@@ -150,9 +161,9 @@ p {
         height: auto;
         margin-bottom: 20px;
     }
-   
+
     .contact-item {
-        width: 45%; 
+        width: 45%;
     }
 
     .contact-container {
@@ -190,10 +201,10 @@ p {
         padding-top: 20px;
         margin-bottom: 40px;
     }
-}
+} */
 
 /* For medium screens (min-width: 768px) and larger, like tablets and small desktops */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .poster {
         width: 250px;
         height: 370px;
@@ -206,14 +217,14 @@ p {
     }
     .container-fluid {
         height: auto;
-        
+
     }
     .container{
         height: auto;
     }
 
     .contact-item {
-        width: 30%; 
+        width: 30%;
     }
 
     .space {
@@ -223,19 +234,19 @@ p {
     .i1 {
         margin-top: 30px;
     }
-}
+} */
 
 /* For larger screens (min-width: 992px) */
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .contact-item {
-        width: 30%; /* 3 items per row */
+        width: 30%;
     }
     .container{
         height: auto;
     }
     .container-fluid {
         height: auto;
-        
+
     }
     .space {
         width: 80%;
@@ -245,7 +256,7 @@ p {
         width: 250px;
         height: 370px;
     }
-    
+
     .poster1 {
         width: 250px;
         height: 370px;
@@ -255,10 +266,10 @@ p {
         width: 80%;
         max-width: 900px;
     }
-}
+} */
 
 /* For extra large screens (min-width: 1200px) */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
     .contact-container {
         width: 80%;
         max-width: 900px;
@@ -268,7 +279,7 @@ p {
     }
     .container-fluid {
         height: auto;
-       
+
     }
     .contact-item {
         width: 30%;
@@ -278,6 +289,7 @@ p {
         width: 250px;
         height: 370px;
     }
+
     .poster1 {
         width: 250px;
         height: 370px;
@@ -286,16 +298,16 @@ p {
     .space {
         width: 90%;
     }
-}
+} */
 
 /* For even smaller screens (mobile) */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .h1, .h2, .h3 {
         font-size: 1.5em;
     }
     .container-fluid {
         height: auto;
-      
+
     }
     .p1, .p2 {
         font-size: 16px;
@@ -309,7 +321,7 @@ p {
         height: auto;
     }
     .contact-item {
-        width: 100%; 
+        width: 100%;
     }
 
     .contact-container {
@@ -317,8 +329,8 @@ p {
         align-items: center;
     }
     .i1, .i {
-        width: 100%; /* Adjust image sizes for mobile */
+        width: 100%;
         margin: 0;
         height: auto;
     }
-}
+} */
