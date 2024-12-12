@@ -10,6 +10,7 @@ export class CinemaListItemComponent implements OnInit {
   constructor() { }
 
   @Input()  cinemaList: any[] = [];
+  displayedColumns = ['name', 'location', 'numberOfMovies', 'action'];
   editCinema(cinemaName: string) {
     console.log("edit ",cinemaName);
   }

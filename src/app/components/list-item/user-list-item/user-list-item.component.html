@@ -1,37 +1,97 @@
 <div class="container mt-4">
-    <h5 class="text-light">List</h5>
-    <div class="list-group bg-light p-3 rounded">
-      <!-- Header Row -->
-      <div
-        class="list-group-item d-flex justify-content-between align-items-center fw-bold"
-        style="background-color: #f1f1f1; border-radius: 8px;"
-      >
-        <span>Name</span>
-        <span>Phone</span>
-        <span>Number of Cinemas</span>
-        <span>Action</span>
-      </div>
+  <h5 class="text-light"> VendorList</h5>
+  <mat-table [dataSource]="VendorList" matSort class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let vendor">{{ vendor.name }}</mat-cell>
+    </ng-container>
+
+    <!-- Phone Column -->
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Phone</mat-header-cell>
+      <mat-cell *matCellDef="let vendor">{{ vendor.phone }}</mat-cell>
+    </ng-container>
+
+    <!-- Number of Cinemas Column -->
+    <ng-container matColumnDef="numberOfCinemas">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Number of Cinemas</mat-header-cell>
+      <mat-cell *matCellDef="let vendor">{{ vendor.numberOfCinemas }}</mat-cell>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+      <mat-cell *matCellDef="let vendor">
+        <button mat-flat-button color="primary" (click)="editVendor(vendor.name)">Edit</button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Table Header and Rows -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
+<style>
+  .container {
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f3f4f6, #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
   
-      <!-- Dynamic Rows -->
-      <div
-        *ngFor="let vendor of VendorList; let i = index"
-        class="list-group-item d-flex justify-content-between align-items-center"
-        [ngStyle]="{
-          'background-color': i % 2 === 0 ? '#dbe9f1' : '#549aab',
-          'border-radius': '8px',
-          'color': i % 2 === 0 ? '#000' : '#fff'
-        }"
-      >
-        <span>{{ vendor.name }}</span>
-        <span>{{ vendor.phone }}</span>
-        <span>{{ vendor.numberOfCinemas }}</span>
-        <button
-          class="btn btn-warning rounded-pill text-dark"
-          (click)="editVendor(vendor.name)"
-        >
-          Edit
-        </button>
-      </div>
-    </div>
-  </div>
+  mat-table {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+    background-color: #8f999b;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  }
+  
+  mat-header-cell, mat-cell {
+    padding: 16px;
+    text-align: left;
+    font-size: 20px;
+  }
+  
+  mat-header-cell {
+    font-weight: bold;
+    background-color: #4a90e2;
+    color:black !important;
+    border-bottom: 2px solid #3561a7;
+  }
+  
+  mat-cell {
+    background-color: #ffffff;
+    color: #333333;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  mat-row:nth-child(odd) mat-cell {
+    background-color: #e2e4e7;
+  }
+  
+  mat-row:hover mat-cell {
+    background-color: #eaf4fc;
+  }
+ 
+  
+  button {
+    border-radius: 8px;
+    text-transform: none;
+    background-color: #297aa8;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 6px 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: #87a3b3;
+  }
+  </style>
   
