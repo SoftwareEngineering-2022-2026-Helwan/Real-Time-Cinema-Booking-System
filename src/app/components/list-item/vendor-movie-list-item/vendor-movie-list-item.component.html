@@ -1,42 +1,37 @@
 <div class="container mt-4">
   <h5 class="text-dark">Cinema List</h5>
-  <div class="list-group bg-light p-3 rounded">
-    <!-- Header Row -->
-    <div class="list-group-item d-flex fw-bold" style="background-color: #f1f1f1;">
-      <span>Title</span>
-      <span>Category</span>
-      <span>Duration</span>
-      <span>Action</span>
-    </div>
+  <mat-table [dataSource]="editList" matSort class="mat-elevation-z8">
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+      <mat-cell *matCellDef="let movie">{{ movie.title }}</mat-cell>
+    </ng-container>
 
-    <!-- Dynamic Rows -->
-    <div
-      *ngFor="let movie of editList; let i = index"
-      class="list-group-item d-flex"
-      [ngStyle]="{
-        'background-color': i % 2 === 0 ? '#dbe9f1' : '#549aab',
-        'color': i % 2 === 0 ? '#000' : '#fff'
-      }"
-    >
-      <span>{{ movie.title }}</span>
-      <span>{{ movie.category }}</span>
-      <span>{{ movie.duration }}</span>
-      <div class="action-buttons">
-        <button
-          class="btn btn-light rounded-pill text-dark me-2"
-          (click)="openEditModal(movie.title)"
-        >
-          Edit Show Time
-        </button>
-        <button
-          class="btn btn-warning rounded-pill text-dark"
-          (click)="edit(movie.name)"
-        >
-          Edit
-        </button>
-      </div>
-    </div>
-  </div>
+    <!-- Category Column -->
+    <ng-container matColumnDef="category">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Category</mat-header-cell>
+      <mat-cell *matCellDef="let movie">{{ movie.category }}</mat-cell>
+    </ng-container>
+
+    <!-- Duration Column -->
+    <ng-container matColumnDef="duration">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Duration</mat-header-cell>
+      <mat-cell *matCellDef="let movie">{{ movie.duration }}</mat-cell>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+      <mat-cell *matCellDef="let movie">
+        <button mat-raised-button style="right: 15px;background-color: rgb(78, 114, 156); color: white;" (click)="openEditModal(movie.title)">Edit Show Time </button>
+        <button mat-raised-button style="background-color: #18814d; color: white;" (click)="edit(movie.name)"> Edit</button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Table Header and Rows -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
 </div>
 
 <!-- Edit Modal -->
@@ -98,7 +93,7 @@
         <!-- Action Buttons -->
         <div class="text-end">
           <button 
-            class="btn btn-danger me-2" 
+            class="btn btn-success me-2" 
             id="removeButton" 
             (click)="removeMovie()">
             Remove
@@ -114,3 +109,66 @@
     </div>
   </div>
 </div>
+
+<style>
+.container {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+mat-table {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  background-color: #afa9a9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  
+  
+}
+
+mat-header-cell, mat-cell {
+  padding: 16px;
+  text-align: left;
+  font-size: 20px;
+}
+
+
+mat-header-cell {
+  font-weight: bold;
+  background-color: #7c7674;
+  color:  black !important;;
+  border-bottom: 2px solid #3561a7;
+}
+
+mat-cell {
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 1px solid #dddddd;
+  
+}
+
+mat-row:nth-child(odd) mat-cell {
+  background-color: #f7fafe;
+}
+
+mat-row:hover mat-cell {
+  background-color: #eaf4fc;
+}
+
+button {
+  border-radius: 8px;
+  text-transform: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  opacity: 0.9;
+}
+</style>

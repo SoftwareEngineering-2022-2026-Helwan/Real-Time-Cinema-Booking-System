@@ -8,6 +8,7 @@ import { Component, OnInit ,Input } from '@angular/core';
 export class VendorMovieListItemComponent implements OnInit {
 
   constructor() { }
+  displayedColumns: string[] = ['title', 'category', 'duration', 'action'];
   @Input() editList: any[] = [];
   @Input() showtime: any[] = [];
   closeMark: HTMLElement | null = document.getElementById('closeMark') as HTMLElement | null;
