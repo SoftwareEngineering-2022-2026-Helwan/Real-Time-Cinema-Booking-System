@@ -15,36 +15,36 @@
     border-radius: 50%;
     height: 80px;
     width: 80px;
-    margin: 0px 560px;
+    /* margin: 0px 560px; */
 }
 .h1{
-    margin: 2px 570px;
+    /* margin: 2px 570px; */
 }
 .form1{
-     margin-left: 430px;
+     /* margin-left: 430px; */
      height: 50%;
      width: 700px;
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 .space{
-    margin-top: -1px;
+    /* margin-top: -1px; */
 }
 .btn1{
     width: 330px;
     height: 40px;
     border-radius: 10px;
-    margin-left: 10px;
-    margin-top: 20px;
+    /* margin-left: 10px; */
+    /* margin-top: 20px; */
 }
 .f1{
-    margin-top: 8px;
+    /* margin-top: 8px; */
 }
 .btn2{
     width: 100px;
     height: 40px;
     border-radius: 10px;
-    margin-left: 12px;
-    margin-top: 15px;
+    /* margin-left: 12px; */
+    /* margin-top: 15px; */
 }
 .pass-field button{
     position: absolute;
