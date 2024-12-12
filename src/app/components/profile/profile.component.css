@@ -1,70 +1,127 @@
-.container-fluid{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.body{
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/cinema.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
     align-items: center;
-    /* padding-top: 70px; */
-    /* height: 100vh; */
-    /* width: 100vw; */
-    /* background-color:white ; */
-}
-.nameField
-{
-    display: flex;
     justify-content: center;
-    gap: 5px;
-    align-items: center;
-}
-.img{
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    /* margin: 0px 560px; */
-}
-.h1{
-    /* margin: 2px 570px; */
-}
-.form1{
-     /* margin-left: 430px; */
-     height: 50%;
-     width: 700px;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-    /* margin-top: 15px; */
-}
-.space{
-    /* margin-top: -1px; */
-}
-.btn1{
-    width: 330px;
-    height: 40px;
-    border-radius: 10px;
-    /* margin-left: 10px; */
-    /* margin-top: 20px; */
-}
-.f1{
-    /* margin-top: 8px; */
-}
-.btn2{
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    /* margin-left: 12px; */
-    /* margin-top: 15px; */
-}
-.pass-field button{
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    color: black;
-    padding: 0; 
-    cursor: pointer; 
-  }
-
-  .pass-field {
     position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 50px;
   }
   
+  .body::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.47);
+    z-index: -1;
+  }
+  
+  /* form{
+    width: 700px;
+    height: auto;
+    border-radius: 25px;
+    justify-content: center;
+    padding-top: 50px;
+  } */
+  
+  form h2{
+    margin-top: 2px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* .form-group{
+    margin-bottom: 20px;
+    text-align: left;
+    padding-bottom: 20px;
+  } */
+  
+  /* .form-group label{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+  } */
+  
+  /* .form-group input{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  } */
+  
+  /* .name-group{
+    display: flex;
+    flex-direction: row; */
+    /* justify-content: space-between; */
+    /* flex: 1; */
+    /* flex-wrap: nowrap;
+    flex-grow: 2;
+  } */
+  
+  /* .name-group input{
+    width: 100%;
+    padding-right: 113px;
+  }
+  
+  .another-form-group input{
+    width: 100%;
+  }
+  
+  .input-form-group{
+    display: flex;
+    flex-direction: column;
+  
+  } */
+  
+  .btn {
+    border: 2px solid #11435a;
+    border-radius: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .btn:hover{
+    background-color: #11435a;
+    color: white;
+  }
+  
+  ::ng-deep mat-spinner circle{
+    stroke: #11435a;
+  }
+  
+  ::ng-deep mat-spinner circle:hover{
+    stroke: white;
+  }
+  ::ng-deep mat-spinner::after circle{
+    stroke: #11435a;
+    width: 100%;
+  }
+  
+  ::ng-deep mat-spinner::after circle:hover{
+    stroke: white;
+    width: 100%;
+  }
+  
+  .pass-field{
+    position: relative;
+    width: 100%;
+  }
+  
+  
+  .pass-field button{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
