@@ -7,4 +7,17 @@ export class AuthService {
 
 constructor() { }
 
+isLogged() : boolean{
+  return false;
+}
+isAdmin() : boolean{
+  return false;
+}
+isVendor() : boolean{
+  return false;
+}
+isCustomer() : boolean{
+  return false;
+}
+
 }
