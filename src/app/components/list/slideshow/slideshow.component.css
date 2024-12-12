@@ -1,0 +1,10 @@
+.carousel-inner img {
+    height: 400px;
+    background-size: cover;
+  }
+  
+#Slideshow{
+  padding-top: 20px;
+  width: 90%;
+  margin: auto;
+}
