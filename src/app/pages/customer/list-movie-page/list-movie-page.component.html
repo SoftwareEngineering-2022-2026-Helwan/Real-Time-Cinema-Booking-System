@@ -1,3 +1,57 @@
-<p>
-  list-movie-page works!
-</p>
+<app-customer-header></app-customer-header>
+
+<div class="search" style="margin-top: 85px; padding: 0 25px">
+  <div
+    class="search-bar"
+    style="display: flex; justify-content: center; align-items: center"
+  >
+    <nav class="navbar">
+      <div class="container-fluid">
+        <form
+          class="d-flex"
+          role="search"
+          [formGroup]="searchForm"
+          (ngSubmit)="submitSearchForm(searchForm)"
+        >
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            style="width: 300px; height: 40px"
+            formControlName="searchHeader"
+          />
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+  <div
+    class="search-filter"
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    "
+  >
+    <form [formGroup]="searchForm" (ngSubmit)="submitSearchForm(searchForm)">
+      <mat-form-field style="width: 300px">
+        <mat-label>Filter by Cinema</mat-label>
+        <mat-select
+          [(ngModel)]="selectedValue"
+          name="cinema"
+          formControlName="searchFilter"
+        >
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let cinema of cinemas" [value]="cinema.id">
+            {{ cinema.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+</div>
+
+<app-movie-list></app-movie-list>
+<app-footer></app-footer>

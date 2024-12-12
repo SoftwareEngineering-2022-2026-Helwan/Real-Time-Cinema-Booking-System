@@ -1,0 +1,9 @@
+.btn{
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.btn:hover{
+  background-color: var(--secondary);
+  color: white;
+}
