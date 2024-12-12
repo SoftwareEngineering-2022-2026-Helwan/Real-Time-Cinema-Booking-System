@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {GoogleMapsModule} from '@angular/google-maps';
 
+
 import {Chart, registerables} from "chart.js";
 Chart.register(...registerables);
 
