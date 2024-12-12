@@ -40,17 +40,34 @@ export class SignupComponent implements OnInit,OnDestroy {
     this.showPass = !this.showPass;
   }
   displayVerifyPass(){
-    this.showVerifyPass = !this.showVerifyPass;
+    this.showVerifyPass = !this.showVerifyPass; 
   }
 
-  passwordMatchValidator(pass = 'password', confirmPass = 'verifyPassword'): ValidatorFn{
-    return(FormGroup: AbstractControl): ValidationErrors | null => {
-      const password = FormGroup.get(pass)?.value;
-      const confirmPassword = FormGroup.get(confirmPass)?.value;
-        console.log(password," =?= ",confirmPassword);
-      return password === confirmPassword ? null : {passwordNotMatch : true};
+  passwordMatchValidator(pass = 'password', confirmPass = 'verifyPassword'): ValidatorFn {
+    return (formGroup: AbstractControl): ValidationErrors | null => {
+      const password = formGroup.get(pass)?.value;
+      const confirmPassword = formGroup.get(confirmPass)?.value;
+  
+      // Check if passwords match
+      const isMatch = password === confirmPassword;
+  
+      // Set or clear error on the confirmPass control
+      const confirmPasswordControl = formGroup.get(confirmPass);
+      if (confirmPasswordControl) {
+        if (!isMatch) {
+          confirmPasswordControl.setErrors({ passwordNotMatch: true });
+        } else {
+          if (confirmPasswordControl.hasError('passwordNotMatch')) {
+            confirmPasswordControl.setErrors(null);
+          }
+        }
+      }
+  
+      // Optionally set error on the formGroup itself
+      return isMatch ? null : { passwordNotMatch: true };
     };
   }
+  
 
   submitSignupForm(form : FormGroup){
     console.log(form.value);
