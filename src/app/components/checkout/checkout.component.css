@@ -1,0 +1,8 @@
+.checkout-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--grey);
+    justify-content: start;
+    width: 90vw;
+    padding: 10px;
+}
