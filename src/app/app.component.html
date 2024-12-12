@@ -17,6 +17,45 @@
 <!-- <app-gust-header></app-gust-header> -->
 <!-- <app-admin-header></app-admin-header> -->
 <!-- <app-customer-header></app-customer-header> -->
-<app-vendor-header></app-vendor-header>
+<!-- <app-vendor-header></app-vendor-header>
 <app-dashboard></app-dashboard>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
+<!-- <app-ticket></app-ticket> -->
+
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+  #openButton
+  hidden
+>
+  Reservation
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Reservation</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <app-ticket></app-ticket>
+      </div>
+    </div>
+  </div>
+</div>
