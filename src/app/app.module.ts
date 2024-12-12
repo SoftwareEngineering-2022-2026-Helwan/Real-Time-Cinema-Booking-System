@@ -51,6 +51,9 @@ import {MovieListComponent} from "./components/list/movie-list/movie-list.compon
 import { TicketComponent } from './components/ticket/ticket.component';
 import { SlideshowComponent } from './components/list/slideshow/slideshow.component';
 import { SeatListComponent } from './components/list/seat-list/seat-list.component';
+
+import { NotAuthorizedComponent } from './components/errors/NotAuthorized/NotAuthorized.component';
+import { NotFoundComponent } from './components/errors/NotFound/NotFound.component';
 import {VendorMovieListComponent} from "./components/list/vendor-movie-list/vendor-movie-list.component";
 import {VendorMovieListItemComponent} from "./components/list-item/vendor-movie-list-item/vendor-movie-list-item.component";
 import { VendorListPageComponent} from "./pages/admin/vendor-list-page/vendor-list-page.component";
@@ -62,6 +65,8 @@ import { CinemaListPageComponent } from './pages/vendor/cinema-list-page/cinema-
 //#endregion
 const COMPONETS =
 [
+    NotAuthorizedComponent,
+    NotFoundComponent,
     CinemaListPageComponent,
     ListMoviePageComponent,
     VendorMovieListPageComponent,
