@@ -1,3 +1,44 @@
-<p>
-  faq works!
-</p>
+<app-gust-header *ngIf="!this.authService.isLogged()"></app-gust-header>
+<app-admin-header *ngIf="this.authService.isAdmin()"></app-admin-header>
+<app-vendor-header *ngIf="this.authService.isVendor()"></app-vendor-header>
+<app-customer-header
+  *ngIf="this.authService.isCustomer()"
+></app-customer-header>
+<div
+  class="container text-center"
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  "
+>
+  <div class="faq" style="margin-top: 70px; padding: 25px 0">
+    <div class="row align-items-start">
+      <div
+        class="card col-md-4"
+        style="margin-bottom: 20px; max-width: 435px; margin-right: 5px"
+        *ngFor="let faq of faqs"
+      >
+        <div class="col">
+          <div class="card-body">
+            <h5
+              class="card-title"
+              style="
+                border-bottom: 2px solid #ccc;
+                padding-bottom: 10px;
+                padding: 20px 0px;
+              "
+            >
+              {{ faq.question }}
+            </h5>
+            <p class="card-text" style="padding: 20px">
+              {{ faq.answer }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
