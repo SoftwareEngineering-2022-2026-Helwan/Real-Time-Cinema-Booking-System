@@ -1,3 +1,23 @@
-<p>
-  reservation-page works!
-</p>
+<app-customer-header></app-customer-header>
+<app-detailed-movieCard></app-detailed-movieCard>
+<app-seat-list></app-seat-list>
+<app-checkout></app-checkout>
+<div>
+  <div class="col-md-12">
+    <google-map
+      height="400px"
+      width="100%"
+      [zoom]="zoom"
+      [center]="center"
+      [options]="options"
+      formControlName="location"
+    >
+      <map-advanced-marker
+        #markerElem="mapAdvancedMarker"
+        [position]="{ lat: markers.lat, lng: markers.lng }"
+        [content]="markers.content"
+      ></map-advanced-marker
+    ></google-map>
+  </div>
+  <app-footer></app-footer>
+</div>
