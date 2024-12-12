@@ -1,0 +1,113 @@
+.seatListBody {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #9d9dff, #1f1f41);
+    color: #fff;
+    flex-wrap: nowrap;
+    /* overflow: scroll; */
+}
+
+.status-legend {
+    position: fixed;
+    top: 150px;
+    right: 10px;
+    display: flex;
+    gap: 20px;
+    z-index: 1100;
+    align-items: center;
+}
+
+/* Status item container */
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: nowrap;
+
+}
+
+.status-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+
+.status-box.empty {
+    background-color: #ffffff;
+
+}
+
+.status-box.occupied {
+    background-color: #5e5e5e;
+
+}
+
+.status-box.selected {
+    background-color: #00aeff;
+
+}
+
+.status-item span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    font-family: Arial, sans-serif;
+}
+
+
+.cinema {
+    display: flex;
+    /* overflow: scroll; */
+    flex-direction: column;
+    align-items: center;
+    background-color: #1f1f41;
+    padding: 20px 30px 20px   0px;
+    border-radius: 15px;
+    max-width: 810px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    
+}
+
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    flex-wrap: nowrap;
+}
+
+
+.seat {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+
+.seat.selected {
+    background-color: #6c5ce7;
+}
+
+.SeatCard
+{
+    display: flex;
+    flex-direction: row;
+    /* overflow: scroll; */
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.rowContainer
+{
+    overflow: scroll;
+    margin: 10px
+}

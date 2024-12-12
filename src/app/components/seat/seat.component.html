@@ -1,3 +1,8 @@
-<p>
-  seat works!
-</p>
+<button type="button" (click)="reserve(seat);" [disabled]="!seat.isFree && !userReservation.seatReserved.includes(seat.id)">
+    <div   class="seat" [ngClass]="{'selected': userReservation.seatReserved.includes(seat.id),
+        'occupied': !seat.isFree && !userReservation.seatReserved.includes(seat.id),
+    }" >
+        <p>{{seat.id}}</p>
+    </div>
+</button>
+
