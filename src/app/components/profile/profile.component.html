@@ -1,3 +1,197 @@
-<p>
-  profile works!
-</p>
+<div class="container-fluid">
+  <img class="img" src="../../assets/imgs/images.jpeg" alt="">
+  <h1 class="h1">Profile</h1>
+  <form class="row g-3 form1" [formGroup]="myForm" [formGroup]="signupForm">
+    <div class="col-md-3 f1">
+      <label class="form-label">First Name</label>
+      <input type="text" formControlName="fname" *ngIf = "active? '' : 'disabled' " class="form-control" placeholder="enter Fname" id="fname">
+
+    <div
+    class="alert alert-danger"
+    *ngIf="
+      signupForm.get('fname')?.errors &&
+      signupForm.get('fname')?.touched
+    "
+    style="
+      height: max-content;
+      min-height: 30px;
+      max-height: 100px;
+      margin-top: 3px;
+      padding-top: 4px;
+      padding-bottom: 0px;
+      overflow: none;
+      color: #666;
+    "
+  >
+    <p *ngIf="signupForm.get('fname')?.getError('required')">
+      First name is required
+    </p>
+    <p *ngIf="signupForm.get('fname')?.getError('minlength')">
+      name too short
+    </p>
+    <p *ngIf="signupForm.get('fname')?.getError('maxlength')">
+      name too long
+    </p>
+  </div>
+</div>
+    <div class="col-md-3 f1">
+      <label class="form-label">Last Name</label>
+      <input type="text" formControlName="lname" *ngIf = "active? '' : 'disabled' " class="form-control" placeholder="enter Lname" id="lname">
+  
+    <div
+            class="alert alert-danger"
+            *ngIf="
+              signupForm.get('lname')?.errors &&
+              signupForm.get('lname')?.touched
+            "
+            style="
+              height: max-content;
+              min-height: 30px;
+              max-height: 100px;
+              margin-top: 3px;
+              padding-top: 4px;
+              padding-bottom: 0px;
+              overflow: none;
+              color: #666;
+            "
+          >
+            <p *ngIf="signupForm.get('lname')?.getError('required')">
+              Last name is required
+            </p>
+            <p *ngIf="signupForm.get('lname')?.getError('minlength')">
+              name too short
+            </p>
+            <p *ngIf="signupForm.get('lname')?.getError('maxlength')">
+              name too long
+            </p>
+          </div>
+      </div>
+    <div class="space"></div>
+    <div class="col-md-6 f1">
+      <label class="form-label">Email</label>
+      <input type="email" formControlName="email" *ngIf = "active? '' : 'disabled' " class="form-control" placeholder="example@gmail.com" id="email">
+ 
+    <div
+    class="alert alert-danger"
+    *ngIf="
+      signupForm.get('email')?.errors &&
+      signupForm.get('email')?.touched
+    "
+    style="
+      height: max-content;
+      min-height: 30px;
+      max-height: 100px;
+      margin-top: 3px;
+      padding-top: 4px;
+      padding-bottom: 0px;
+      overflow: none;
+      color: #666;
+    "
+  >
+    <p *ngIf="signupForm.get('email')?.getError('required')">
+      Email is required
+    </p>
+    <p *ngIf="signupForm.get('email')?.getError('email')">
+      Email is Invalid
+    </p>
+  </div>
+</div>
+<div class="space"></div>
+    <div class="col-md-6 f1">
+      <label for="password" class="form-label">Password</label>
+      <div class="pass-field">
+        <input
+          [type]="showPass ? 'text' : 'password'"
+          class="form-control"
+          id="password"
+          placeholder="***************"
+          formControlName="password"
+          *ngIf = "active? '' : 'disabled' "
+        />
+
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="displayPass()"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="showPass"
+        >
+          <mat-icon>{{showPass ? "visibility" : "visibility_off"}}</mat-icon>
+        </button>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          signupForm.get('password')?.errors &&
+          signupForm.get('password')?.touched
+        "
+        style="
+          height: max-content;
+          min-height: 30px;
+          max-height: 100px;
+          margin-top: 3px;
+          padding-top: 4px;
+          padding-bottom: 0px;
+          overflow: none;
+          color: #666;
+        "
+      >
+        <p *ngIf="signupForm.get('password')?.getError('required')">
+          Password is required
+        </p>
+        <p
+          *ngIf="
+            signupForm.get('password')?.getError('pattern') ||
+            signupForm.get('password')?.getError('minlength') ||
+            signupForm.get('password')?.getError('maxlength')
+          "
+        >
+          Password must be alphanumeric, length between 8 and 15
+        </p>
+      </div>
+
+</div>
+    <div class="space"></div>
+    <div class="col-md-6 f1">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="text" class="form-control" *ngIf = "active? '' : 'disabled' " formControlName="phone" id="phone" placeholder="+20**********">
+      <div
+      class="alert alert-danger"
+      *ngIf="
+        signupForm.get('phone')?.errors &&
+        signupForm.get('phone')?.touched
+      "
+      style="
+        height: max-content;
+        min-height: 30px;
+        max-height: 100px;
+        margin-top: 3px;
+        padding-top: 4px;
+        padding-bottom: 0px;
+        overflow: none;
+        color: #666;
+      "
+    >
+      <p *ngIf="signupForm.get('phone')?.getError('required')">
+        Phone is required
+      </p>
+      <p
+        *ngIf="
+          signupForm.get('phone')?.getError('minlength') ||
+          signupForm.get('phone')?.getError('maxlength')
+        "
+      >
+        Phone is Invalid
+      </p>
+    </div>
+    </div>
+    <div class="space"></div>
+    <button (click)="active = false" *ngIf="active; else btn" class='btn btn-outline-warning btn1'>Edit</button>
+
+    <ng-template #btn>
+      <button class='btn btn-outline-warning btn2'>Save</button>
+      <button class='btn btn-outline-warning btn2'>Cancel</button>
+      <input type="reset" value="Reset" (click)="resetForm()" class='btn btn-outline-warning btn2'>
+    </ng-template>
+  </form>
+</div>
