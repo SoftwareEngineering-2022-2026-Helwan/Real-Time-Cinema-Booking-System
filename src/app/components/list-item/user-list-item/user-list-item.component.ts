@@ -9,6 +9,7 @@ export class UsersListItemComponent implements OnInit {
 
   constructor() { }
   @Input() VendorList: any[] = [];
+  displayedColumns = ['name', 'phone', 'numberOfCinemas', 'action'];
   editVendor(vendorName: string){
     console.log("Edit ",vendorName);
   }
