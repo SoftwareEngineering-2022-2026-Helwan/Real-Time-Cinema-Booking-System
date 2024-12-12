@@ -1,3 +1,22 @@
-<p>
-  vendor-home works!
-</p>
+<app-vendor-header></app-vendor-header>
+<div
+  class="map"
+  style="border-bottom: 3px solid #ccc; padding-bottom: 5px; margin-top: 64px"
+>
+  <google-map
+    height="500px"
+    width="100%"
+    [zoom]="zoom"
+    [center]="center"
+    [options]="options"
+  >
+    <map-advanced-marker
+      *ngFor="let marker of markers"
+      #markerElem="mapAdvancedMarker"
+      [position]="{ lat: marker.lat, lng: marker.lng }"
+      [content]="marker.content"
+    ></map-advanced-marker
+  ></google-map>
+</div>
+<app-dashboard></app-dashboard>
+<app-footer></app-footer>
