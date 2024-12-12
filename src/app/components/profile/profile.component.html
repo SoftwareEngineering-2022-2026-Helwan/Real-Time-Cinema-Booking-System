@@ -2,74 +2,76 @@
   <img class="img" src="../../assets/imgs/images.jpeg" alt="">
   <h1 class="h1">Profile</h1>
   <form class="row g-3 form1" [formGroup]="myForm" [formGroup]="signupForm">
-    <div class="col-md-3 f1">
-      <label class="form-label">First Name</label>
-      <input type="text" formControlName="fname" *ngIf = "active? '' : 'disabled' " class="form-control" placeholder="enter Fname" id="fname">
-
-    <div
-    class="alert alert-danger"
-    *ngIf="
-      signupForm.get('fname')?.errors &&
-      signupForm.get('fname')?.touched
-    "
-    style="
-      height: max-content;
-      min-height: 30px;
-      max-height: 100px;
-      margin-top: 3px;
-      padding-top: 4px;
-      padding-bottom: 0px;
-      overflow: none;
-      color: #666;
-    "
-  >
-    <p *ngIf="signupForm.get('fname')?.getError('required')">
-      First name is required
-    </p>
-    <p *ngIf="signupForm.get('fname')?.getError('minlength')">
-      name too short
-    </p>
-    <p *ngIf="signupForm.get('fname')?.getError('maxlength')">
-      name too long
-    </p>
-  </div>
-</div>
-    <div class="col-md-3 f1">
-      <label class="form-label">Last Name</label>
-      <input type="text" formControlName="lname" *ngIf = "active? '' : 'disabled' " class="form-control" placeholder="enter Lname" id="lname">
-  
-    <div
-            class="alert alert-danger"
-            *ngIf="
-              signupForm.get('lname')?.errors &&
-              signupForm.get('lname')?.touched
-            "
-            style="
-              height: max-content;
-              min-height: 30px;
-              max-height: 100px;
-              margin-top: 3px;
-              padding-top: 4px;
-              padding-bottom: 0px;
-              overflow: none;
-              color: #666;
-            "
-          >
-            <p *ngIf="signupForm.get('lname')?.getError('required')">
-              Last name is required
-            </p>
-            <p *ngIf="signupForm.get('lname')?.getError('minlength')">
-              name too short
-            </p>
-            <p *ngIf="signupForm.get('lname')?.getError('maxlength')">
-              name too long
-            </p>
-          </div>
+    <div class="nameField">
+        <div class="col-md-3 f1">
+          <label class="form-label">First Name</label>
+          <input type="text" formControlName="fname" [disabled] = "active? false: true"  class="form-control" placeholder="enter Fname" id="fname">
+    
+        <div
+        class="alert alert-danger"
+        *ngIf="
+          signupForm.get('fname')?.errors &&
+          signupForm.get('fname')?.touched
+        "
+        style="
+          height: max-content;
+          min-height: 30px;
+          max-height: 100px;
+          margin-top: 3px;
+          padding-top: 4px;
+          padding-bottom: 0px;
+          overflow: none;
+          color: #666;
+        "
+      >
+        <p *ngIf="signupForm.get('fname')?.getError('required')">
+          First name is required
+        </p>
+        <p *ngIf="signupForm.get('fname')?.getError('minlength')">
+          name too short
+        </p>
+        <p *ngIf="signupForm.get('fname')?.getError('maxlength')">
+          name too long
+        </p>
       </div>
+    </div>
+        <div class="col-md-3 f1">
+          <label class="form-label">Last Name</label>
+          <input type="text" formControlName="lname" [disabled] = "active? false: true" class="form-control" placeholder="enter Lname" id="lname">
+      
+        <div
+                class="alert alert-danger"
+                *ngIf="
+                  signupForm.get('lname')?.errors &&
+                  signupForm.get('lname')?.touched
+                "
+                style="
+                  height: max-content;
+                  min-height: 30px;
+                  max-height: 100px;
+                  margin-top: 3px;
+                  padding-top: 4px;
+                  padding-bottom: 0px;
+                  overflow: none;
+                  color: #666;
+                "
+              >
+                <p *ngIf="signupForm.get('lname')?.getError('required')">
+                  Last name is required
+                </p>
+                <p *ngIf="signupForm.get('lname')?.getError('minlength')">
+                  name too short
+                </p>
+                <p *ngIf="signupForm.get('lname')?.getError('maxlength')">
+                  name too long
+                </p>
+              </div>
+          </div>
+    </div>
     <div class="space"></div>
     <div class="col-md-6 f1">
       <label class="form-label">Email</label>
-      <input type="email" formControlName="email" *ngIf = "active? '' : 'disabled' " class="form-control" placeholder="example@gmail.com" id="email">
+      <input type="email" formControlName="email" [disabled] = "active? false: true"  class="form-control" placeholder="example@gmail.com" id="email">
  
     <div
     class="alert alert-danger"
@@ -106,7 +108,7 @@
           id="password"
           placeholder="***************"
           formControlName="password"
-          *ngIf = "active? '' : 'disabled' "
+          [disabled] = "active? false: true" 
         />
 
         <button
@@ -154,7 +156,7 @@
     <div class="space"></div>
     <div class="col-md-6 f1">
       <label for="phone" class="form-label">Phone</label>
-      <input type="text" class="form-control" *ngIf = "active? '' : 'disabled' " formControlName="phone" id="phone" placeholder="+20**********">
+      <input type="text" class="form-control" [disabled] = "active? false: true"  formControlName="phone" id="phone" placeholder="+20**********">
       <div
       class="alert alert-danger"
       *ngIf="

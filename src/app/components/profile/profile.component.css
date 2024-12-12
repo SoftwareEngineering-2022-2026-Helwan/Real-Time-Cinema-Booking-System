@@ -8,10 +8,13 @@
     /* width: 100vw; */
     /* background-color:white ; */
 }
-/* *{
-    background-color: black;
-    color: white;
-} */
+.nameField
+{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+}
 .img{
     border-radius: 50%;
     height: 80px;
@@ -25,6 +28,10 @@
      /* margin-left: 430px; */
      height: 50%;
      width: 700px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
     /* margin-top: 15px; */
 }
 .space{
