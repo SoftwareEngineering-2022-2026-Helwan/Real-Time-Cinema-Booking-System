@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
 
-import { guardGuard } from './admin.guard';
+import { guardGuard } from './guards.guard';
 
 describe('guardGuard', () => {
   const executeGuard: CanActivateFn = (...guardParameters) => 

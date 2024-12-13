@@ -1,6 +1,17 @@
 <div class="container">
+  <h2
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--primary);
+      font-style: italic;
+      padding: 10px;
+    "
+  >
+    Reservation List
+  </h2>
     <ng-container *ngFor="let reservation of reservations">
         <app-reservation-list-item [reservation]="reservation"></app-reservation-list-item>
     </ng-container>
 </div>
-

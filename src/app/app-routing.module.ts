@@ -13,7 +13,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { FeedbackListComponent } from './components/list/feedback-list/feedback-list.component';
 import { ReservationPageComponent } from './pages/customer/reservation-page/reservation-page.component';
-import { adminGuard } from './services/auth/admin.guard';
+import { adminGuard, authGuard, customerGuard } from './services/auth/guards.guard';
 
 const routes: Routes = [
     {
@@ -32,11 +32,12 @@ const routes: Routes = [
     {
         path: 'reservation',
         component: ReservationPageComponent,
+        // canActivate: [customerGuard,authGuard]
     },
     {
         path: 'admin',
         component: AdminHomeComponent,
-        canActivate: [adminGuard]
+        // canActivate: [adminGuard]
     },
     {
         path: 'feedback-list',

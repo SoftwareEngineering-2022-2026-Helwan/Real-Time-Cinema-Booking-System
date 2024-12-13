@@ -1,3 +1,52 @@
-<p>
-  vendor-movie-list-page works!
-</p>
+<app-vendor-header></app-vendor-header>
+<div style="margin-top: 50px">
+  <app-vendor-movie-list></app-vendor-movie-list>>
+  <div
+    style="
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn"
+      data-bs-toggle="modal"
+      data-bs-target="#movieForm"
+      #openButton
+    >
+      Add Movie
+    </button>
+
+    <!-- Modal -->
+    <div>
+      <div
+        class="modal fade bd-example-modal-lg"
+        role="dialog"
+        id="movieForm"
+        tabindex="-1"
+        aria-labelledby="myLargeModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div>
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body"><app-movie-form></app-movie-form></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
