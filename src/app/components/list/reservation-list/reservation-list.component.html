@@ -1,5 +1,6 @@
 <div class="container">
-    <h3>Reservation List</h3>
-    <app-reservation-list-item [reservations]="reservations"></app-reservation-list-item>
+    <ng-container *ngFor="let reservation of reservations">
+        <app-reservation-list-item [reservation]="reservation"></app-reservation-list-item>
+    </ng-container>
 </div>
 

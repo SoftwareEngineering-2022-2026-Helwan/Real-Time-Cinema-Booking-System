@@ -8,7 +8,7 @@ import { Component, OnInit , Input} from '@angular/core';
 export class ReservationListItemComponent implements OnInit {
 
   constructor() { }
-  @Input() reservations: any[] = [];
+  @Input() reservation!: any;
 
 
   cancelReservation(reservationNumber : number) {
