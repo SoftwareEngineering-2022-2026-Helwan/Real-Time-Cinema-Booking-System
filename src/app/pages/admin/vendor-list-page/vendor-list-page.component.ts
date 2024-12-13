@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorListPageComponent implements OnInit {
 
-  clicked = false;
 
   constructor() { }
 
