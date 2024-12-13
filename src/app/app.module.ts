@@ -10,9 +10,6 @@ import {GoogleMapsModule} from '@angular/google-maps';
 
 import {Chart, registerables} from "chart.js";
 Chart.register(...registerables);
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-import { MatButtonModule } from '@angular/material/button';
 
 
 //#region Components
@@ -157,9 +154,6 @@ const SERVICES = [
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatTableModule,
-    MatSortModule,
-    MatButtonModule,
 
   ],
   providers: [SERVICES],
