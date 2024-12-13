@@ -1,5 +1,16 @@
 <div class="container mt-4">
-  <h5 class="text-light"> VendorList</h5>
+  <h2
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--primary);
+      font-style: italic;
+      padding-bottom: 10px;
+    "
+  >
+    Users List
+  </h2>
   <mat-table [dataSource]="VendorList" matSort class="mat-elevation-z8">
     <!-- Name Column -->
     <ng-container matColumnDef="name">
@@ -15,21 +26,40 @@
 
     <!-- Number of Cinemas Column -->
     <ng-container matColumnDef="numberOfCinemas">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Number of Cinemas</mat-header-cell>
-      <mat-cell *matCellDef="let vendor">{{ vendor.numberOfCinemas }}</mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Number of Cinemas</mat-header-cell
+      >
+      <mat-cell *matCellDef="let vendor">
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+          "
+        >
+          {{ vendor.numberOfCinemas }}
+        </div></mat-cell
+      >
     </ng-container>
 
     <!-- Action Column -->
     <ng-container matColumnDef="action">
       <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
       <mat-cell *matCellDef="let vendor">
-        <button mat-flat-button color="primary" (click)="editVendor(vendor.name)">Edit</button>
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="editVendor(vendor.name)"
+        >
+          Edit
+        </button>
       </mat-cell>
     </ng-container>
 
     <!-- Table Header and Rows -->
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
 </div>
 
@@ -42,44 +72,43 @@
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   mat-table {
     width: 100%;
     overflow-x: auto;
     border-radius: 8px;
     background-color: #8f999b;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-
   }
-  
-  mat-header-cell, mat-cell {
+
+  mat-header-cell,
+  mat-cell {
     padding: 16px;
     text-align: left;
     font-size: 20px;
   }
-  
+
   mat-header-cell {
     font-weight: bold;
     background-color: #4a90e2;
-    color:black !important;
+    color: black !important;
     border-bottom: 2px solid #3561a7;
   }
-  
+
   mat-cell {
     background-color: #ffffff;
     color: #333333;
     border-bottom: 1px solid #dddddd;
   }
-  
+
   mat-row:nth-child(odd) mat-cell {
     background-color: #e2e4e7;
   }
-  
+
   mat-row:hover mat-cell {
     background-color: #eaf4fc;
   }
- 
-  
+
   button {
     border-radius: 8px;
     text-transform: none;
@@ -89,9 +118,8 @@
     padding: 6px 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   button:hover {
     background-color: #87a3b3;
   }
-  </style>
-  
+</style>

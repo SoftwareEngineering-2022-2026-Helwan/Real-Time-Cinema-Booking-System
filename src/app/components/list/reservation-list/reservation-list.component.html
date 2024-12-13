@@ -1,5 +1,17 @@
 <div class="container">
-    <h3>Reservation List</h3>
-    <app-reservation-list-item [reservations]="reservations"></app-reservation-list-item>
+  <h2
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--primary);
+      font-style: italic;
+      padding: 10px;
+    "
+  >
+    Reservation List
+  </h2>
+  <app-reservation-list-item
+    [reservations]="reservations"
+  ></app-reservation-list-item>
 </div>
-
