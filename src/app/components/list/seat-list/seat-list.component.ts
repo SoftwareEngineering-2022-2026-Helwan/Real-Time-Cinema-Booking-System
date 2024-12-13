@@ -10,9 +10,9 @@ import { ReservationService } from 'src/app/services/reservation/reservation.ser
   styleUrls: ['./seat-list.component.css'],
 })
 export class SeatListComponent implements OnInit {
-    
+
     currentShowtime!: ShowTimes;
-    selectionChange(showtime: ShowTimes) 
+    selectionChange(showtime: ShowTimes)
     {
         console.log(showtime);
         this.currentShowtime = showtime;
@@ -21,7 +21,7 @@ export class SeatListComponent implements OnInit {
 
     seats: Seat[] = SEAT_DATA_SET;
     showTimes: ShowTimes[] = this.reservation.showtimes;
-    
+
 
 
 
@@ -32,6 +32,10 @@ export class SeatListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  checkout() {
+    console.log(this.currentShowtime);
   }
 
 }
