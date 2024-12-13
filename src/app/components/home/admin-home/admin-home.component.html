@@ -1,3 +1,217 @@
-<p>
-  Admin-home works!
-</p>
+<app-admin-header></app-admin-header>
+
+<div class="container-fluid">
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      font-style: italic;
+    "
+  >
+    <h2>Welcome Admin</h2>
+  </div>
+  <app-slideshow></app-slideshow>
+  <div
+    class="container"
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    "
+  >
+    <div class="poster col-md-3 shadow">
+      <img src="../../../../assets/imgs/posters/6.jpg" alt="" />
+    </div>
+    <div class="poster col-md-3 shadow">
+      <img src="../../../../assets/imgs/posters/7.jpg" alt="" />
+    </div>
+    <div class="poster col-md-3 shadow">
+      <img src="../../../../assets/imgs/posters/8.jpg" alt="" />
+    </div>
+    <div class="poster col-md-3 shadow">
+      <img src="../../../../assets/imgs/posters/9.jpg" alt="" />
+    </div>
+  </div>
+
+  <div class="container">
+    <div
+      class="map"
+      style="
+        padding: 5px 0;
+        margin-top: 64px;
+        border-bottom: 2px solid #ccc;
+        border-top: 2px solid #ccc;
+      "
+    >
+      <google-map
+        height="400px"
+        width="100%"
+        [zoom]="zoom"
+        [center]="center"
+        [options]="options"
+      >
+        <map-advanced-marker
+          *ngFor="let marker of markers"
+          #markerElem="mapAdvancedMarker"
+          [position]="{ lat: marker.lat, lng: marker.lng }"
+          [content]="marker.content"
+        ></map-advanced-marker
+      ></google-map>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 50px">
+    <h3 style="display: flex; justify-content: center; align-items: center">
+      Our Services
+    </h3>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50%;
+        border-bottom: 1px solid #ccc;
+      "
+    >
+      <div class="img">
+        <svg
+          class="i"
+          width="262"
+          height="173"
+          viewBox="0 0 262 173"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.725 116.775H262V121.1C260.042 121.1 257.887 121.1 255.45 121.1C248.219 121.1 242.35 124.975 242.35 129.75C242.35 131.333 242.35 132.799 242.35 134.075H19.65C19.65 132.799 19.65 131.333 19.65 129.75C19.65 124.975 13.7812 121.1 6.55 121.1C4.46055 121.1 2.1877 121.1 0 121.1V116.775H3.275C5.0828 116.775 6.55 115.806 6.55 114.612C6.55 113.419 5.0828 112.45 3.275 112.45H0V108.125H3.275C5.0828 108.125 6.55 107.156 6.55 105.962C6.55 104.769 5.0828 103.8 3.275 103.8H0V99.475H3.275C5.0828 99.475 6.55 98.5062 6.55 97.3125C6.55 96.1188 5.0828 95.15 3.275 95.15H0V90.825H3.275C5.0828 90.825 6.55 89.8562 6.55 88.6625C6.55 87.4688 5.0828 86.5 3.275 86.5H0V82.175H3.275C5.0828 82.175 6.55 81.2062 6.55 80.0125C6.55 78.8188 5.0828 77.85 3.275 77.85H0V73.525H3.275C5.0828 73.525 6.55 72.5562 6.55 71.3625C6.55 70.1688 5.0828 69.2 3.275 69.2H0V64.875H3.275C5.0828 64.875 6.55 63.9062 6.55 62.7125C6.55 61.5188 5.0828 60.55 3.275 60.55H0V56.225C1.95845 56.225 4.1134 56.225 6.55 56.225C13.7812 56.225 19.65 52.3498 19.65 47.575C19.65 45.992 19.65 44.5259 19.65 43.25H242.35C242.35 44.5259 242.35 45.992 242.35 47.575C242.35 52.3498 248.219 56.225 255.45 56.225C257.887 56.225 260.042 56.225 262 56.225V60.55H258.725C256.917 60.55 255.45 61.5188 255.45 62.7125C255.45 63.9062 256.917 64.875 258.725 64.875H262V69.2H258.725C256.917 69.2 255.45 70.1688 255.45 71.3625C255.45 72.5562 256.917 73.525 258.725 73.525H262V77.85H258.725C256.917 77.85 255.45 78.8188 255.45 80.0125C255.45 81.2062 256.917 82.175 258.725 82.175H262V86.5H258.725C256.917 86.5 255.45 87.4688 255.45 88.6625C255.45 89.8562 256.917 90.825 258.725 90.825H262V95.15H258.725C256.917 95.15 255.45 96.1188 255.45 97.3125C255.45 98.5062 256.917 99.475 258.725 99.475H262V103.8H258.725C256.917 103.8 255.45 104.769 255.45 105.962C255.45 107.156 256.917 108.125 258.725 108.125H262V112.45H258.725C256.917 112.45 255.45 113.419 255.45 114.612C255.45 115.806 256.917 116.775 258.725 116.775ZM235.8 64.875C235.8 60.1002 229.931 56.225 222.7 56.225H39.3C32.0688 56.225 26.2 60.1002 26.2 64.875V112.45C26.2 117.225 32.0688 121.1 39.3 121.1H222.7C229.931 121.1 235.8 117.225 235.8 112.45V64.875ZM222.7 116.775H39.3C35.6779 116.775 32.75 114.837 32.75 112.45V64.875C32.75 62.4833 35.6779 60.55 39.3 60.55H222.7C226.316 60.55 229.25 62.4833 229.25 64.875V112.45C229.25 114.837 226.316 116.775 222.7 116.775ZM74.5849 77.7981H48.5617V80.3498H59.3823V99.475H63.7315V80.3498H74.5783V77.7981H74.5849ZM83.6304 77.7981H79.2812V99.475H83.6304V77.7981ZM96.6715 84.2942C97.3527 82.9448 98.5513 81.8722 100.248 81.0765C101.938 80.2763 104.047 79.8784 106.569 79.8784C108.763 79.8784 110.584 80.2374 112.031 80.9597C113.485 81.6776 114.586 82.8281 115.346 84.4067L119.616 83.7407C118.738 81.7425 117.18 80.1898 114.939 79.0869C112.699 77.9841 109.935 77.4305 106.654 77.4305C103.759 77.4305 101.106 77.8673 98.6954 78.741C96.285 79.6146 94.4314 80.8905 93.1148 82.5729C91.8113 84.2553 91.1563 86.2232 91.1563 88.4765C91.1563 90.5482 91.7393 92.4858 92.8987 94.2893C94.058 96.0928 95.7414 97.4725 97.9487 98.424C100.169 99.3755 103.045 99.8513 106.582 99.8513C109.994 99.8513 112.889 99.2328 115.254 97.9959C117.618 96.7589 119.256 94.964 120.166 92.6069L115.817 91.8803C115.221 93.7054 114.075 95.0808 112.398 96.0107C110.708 96.9362 108.658 97.399 106.221 97.399C104.224 97.399 102.363 97.0573 100.647 96.3783C98.9312 95.6993 97.6671 94.6699 96.8549 93.2946C96.0426 91.9192 95.63 90.3103 95.63 88.4636C95.6431 87.0276 95.9837 85.6393 96.6715 84.2942ZM153.028 77.7981H147.146L130.849 88.5241V77.7981H126.5V99.475H130.849V91.9581L136.233 88.5198L147.912 99.475H153.643L139.266 86.5865L153.028 77.7981ZM182.994 96.9232H162.859V89.5405H181.003V86.9887H162.859V80.3498H182.228V77.7981H158.51V99.475H182.994V96.9232ZM213.694 77.7981H187.671V80.3498H198.491V99.475H202.84V80.3498H213.687L213.694 77.7981Z"
+            fill="#F9BF37"
+          />
+        </svg>
+      </div>
+      <div>
+        <p>
+          The Customer Can Reserve <br />
+          Tickets For Available Movies
+        </p>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50%;
+        padding-top: 20px;
+      "
+    >
+      <div>
+        <p>
+          The Vendors Can Upload their<br />
+          Movies' ads On Our Site
+        </p>
+      </div>
+      <div>
+        <svg
+          class="i1"
+          width="160"
+          height="163"
+          viewBox="0 0 160 163"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_227_1981)">
+            <path
+              d="M80 163C124.183 163 160 126.511 160 81.5C160 36.4888 124.183 0 80 0C35.8172 0 0 36.4888 0 81.5C0 126.511 35.8172 163 80 163Z"
+              fill="#04141B"
+            />
+            <path
+              d="M124.553 119.729H35.4451V122.275H124.553V119.729Z"
+              fill="#E2EBEF"
+            />
+            <path
+              d="M110.845 127.369H49.155V129.916H110.845V127.369Z"
+              fill="#E2EBEF"
+            />
+            <path
+              d="M59.6451 72.0256L73.5251 57.6078V92.4006H86.4751V57.6078L100.355 72.0256L109.598 62.8416L80.0026 32.1008L50.4026 62.8416L59.6451 72.0256Z"
+              fill="#9D3915"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_227_1981">
+              <rect width="160" height="163" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 50px">
+    <h3
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 2px solid #ccc;
+        padding-top: 20px;
+      "
+    >
+      Contact Info
+    </h3>
+    <div
+      class="container"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 30%;
+      "
+    >
+      <div
+        class="contact-container"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        "
+      >
+        <div class="contact-item">
+          <p>Email: email1@example.com</p>
+        </div>
+        <div class="contact-item">
+          <p>Email: email2@example.com</p>
+        </div>
+        <div class="contact-item">
+          <p>Email: email3@example.com</p>
+        </div>
+      </div>
+
+      <div
+        class="contact-container"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        "
+      >
+        <div class="contact-item">
+          <p>Phone: +20 1123547822</p>
+        </div>
+        <div class="contact-item">
+          <p>Phone: +20 1123547822</p>
+        </div>
+        <div class="contact-item">
+          <p>Phone: +20 1123547822</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

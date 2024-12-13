@@ -1,8 +1,10 @@
 .carousel-inner img {
     height: 400px;
-    object-fit: cover;
+    background-size: cover;
   }
   
 #Slideshow{
-  padding-top: 70px;
+  padding-top: 20px;
+  width: 90%;
+  margin: auto;
 }
