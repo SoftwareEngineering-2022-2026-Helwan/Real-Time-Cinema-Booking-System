@@ -1,72 +1,96 @@
-<h4>ShowTimes</h4>
-<mat-form-field>
-  <mat-label>Choose an option</mat-label>
-  <mat-select  (selectionChange)="selectionChange($event.value)" >
-    <ng-container *ngFor="let showTime of showTimes;let i = index">
-       
-        <mat-option [value]="showTime">{{ showTime.showtime }}</mat-option>
-        
-    </ng-container>
-  </mat-select>
-</mat-form-field>
-
-<div class="seatListBody">
-
-    <div class="status-legend">
-        
-        <div class="status-item">
-          <div class="status-box empty"></div>
-          <span>Empty</span>
-        </div>
-        <div class="status-item">
-          <div class="status-box occupied"></div>
-          <span>Occupied</span>
-        </div>
-        <div class="status-item">
-          <div class="status-box selected"></div>
-          <span>Selected</span>
+<div class="body" style="border-top: 3px solid #ccc; padding: 20px">
+  <div class="showtime">
+    <h3>Showtimes</h3>
+    <mat-form-field>
+      <mat-label>Choose an option</mat-label>
+      <mat-select (selectionChange)="selectionChange($event.value)">
+        <ng-container *ngFor="let showTime of showTimes; let i = index">
+          <mat-option [value]="showTime">{{ showTime.showtime }}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="seatListBody">
+    <div class="status-legend col-md-12">
+      <div class="status-item">
+        <div class="status-box empty"></div>
+        <span>Empty</span>
+      </div>
+      <div class="status-item">
+        <div class="status-box occupied"></div>
+        <span>Occupied</span>
+      </div>
+      <div class="status-item">
+        <div class="status-box selected"></div>
+        <span>Selected</span>
+      </div>
+    </div>
+    <div class="SeatCard col-md-12">
+      <div class="cinema">
+        <div class="rowContainer">
+          <div class="row">
+            <ng-container *ngFor="let seat of seats; let i = index">
+              <ng-container *ngIf="i <= 12">
+                <div class="seat">
+                  <app-seat
+                    [seat]="seat"
+                    [showtime]="currentShowtime"
+                  ></app-seat>
+                </div>
+              </ng-container>
+            </ng-container>
+          </div>
+          <div class="row">
+            <ng-container *ngFor="let seat of seats; let i = index">
+              <ng-container *ngIf="i > 12 && i <= 25">
+                <div class="seat">
+                  <app-seat
+                    [seat]="seat"
+                    [showtime]="currentShowtime"
+                  ></app-seat>
+                </div>
+              </ng-container>
+            </ng-container>
+          </div>
+          <div class="row">
+            <ng-container *ngFor="let seat of seats; let i = index">
+              <ng-container *ngIf="i > 25 && i <= 38">
+                <div class="seat">
+                  <app-seat
+                    [seat]="seat"
+                    [showtime]="currentShowtime"
+                  ></app-seat>
+                </div>
+              </ng-container>
+            </ng-container>
+          </div>
+          <div class="row">
+            <ng-container *ngFor="let seat of seats; let i = index">
+              <ng-container *ngIf="i > 38 && i <= 47">
+                <div class="seat">
+                  <app-seat
+                    [seat]="seat"
+                    [showtime]="currentShowtime"
+                  ></app-seat>
+                </div>
+              </ng-container>
+            </ng-container>
+          </div>
         </div>
       </div>
-    <div class="SeatCard">
-          <div class="cinema">
-            <div class="rowContainer">
-                <div class="row">
-                    <ng-container *ngFor="let seat of seats; let i = index">
-                        <ng-container *ngIf="i <= 12">
-                            <div class="seat">
-                                <app-seat  [seat]="seat" [showtime]="currentShowtime"></app-seat>
-                            </div>
-                        </ng-container>
-                    </ng-container>
-                </div>
-                <div class="row">
-                    <ng-container *ngFor="let seat of seats; let i = index">
-                        <ng-container *ngIf="i > 12 && i <= 25">
-                            <div class="seat">
-                                <app-seat  [seat]="seat" [showtime]="currentShowtime"></app-seat>
-                            </div>
-                        </ng-container>
-                    </ng-container>
-                </div>
-                <div class="row">
-                    <ng-container *ngFor="let seat of seats; let i = index">
-                        <ng-container *ngIf="i > 25 && i <= 38">
-                            <div class="seat">
-                                <app-seat  [seat]="seat" [showtime]="currentShowtime"></app-seat>
-                            </div>
-                        </ng-container>
-                    </ng-container>
-                </div>
-                <div class="row">
-                    <ng-container *ngFor="let seat of seats; let i = index">
-                        <ng-container *ngIf="i > 38 && i <= 47">
-                            <div class="seat">
-                                <app-seat  [seat]="seat" [showtime]="currentShowtime"></app-seat>
-                            </div>
-                        </ng-container>
-                    </ng-container>
-                </div>
-            </div>
-          </div>
     </div>
+  </div>
+  <div
+    class="checkout"
+    style="
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+    "
+  >
+    <app-checkout></app-checkout>
+    <button class="btn" (click)="checkout()">Checkout</button>
+  </div>
 </div>
