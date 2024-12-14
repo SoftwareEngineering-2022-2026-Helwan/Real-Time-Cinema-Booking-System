@@ -16,6 +16,8 @@ import { ReservationPageComponent } from './pages/customer/reservation-page/rese
 import { adminGuard, authGuard, customerGuard, vendorGuard } from './services/auth/guards.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { VendorListPageComponent } from './pages/admin/vendor-list-page/vendor-list-page.component';
+import { CinemaListPageComponent } from './pages/vendor/cinema-list-page/cinema-list-page.component';
+import { VendorMovieListPageComponent } from './pages/vendor/vendor-movie-list-page/vendor-movie-list-page.component';
 
 const routes: Routes = [
     {
@@ -31,6 +33,16 @@ const routes: Routes = [
     {
         path: 'vendor',
         component: VendorHomeComponent,
+        canActivate: [authGuard,vendorGuard]
+    },
+    {
+        path: 'cinema-list',
+        component: CinemaListPageComponent,
+        canActivate: [authGuard,vendorGuard]
+    },
+    {
+        path: 'vendor-movies-list',
+        component: VendorMovieListPageComponent,
         canActivate: [authGuard,vendorGuard]
     },
     {

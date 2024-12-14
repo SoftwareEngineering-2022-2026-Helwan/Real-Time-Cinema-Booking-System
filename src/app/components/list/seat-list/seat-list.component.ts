@@ -15,9 +15,14 @@ export class SeatListComponent implements OnInit {
     currentShowtime!: ShowTimes;
     selectionChange(showtime: any)
     {
-        // console.log(showtime);
+        console.log("selection st: ",showtime);
         this.reservation.selectedShowTime.next(showtime);
         this.currentShowtime = showtime;
+        this.reservation.selectedShowTime.subscribe((showtime: any) => {
+            this.reservation.getSeatsByShowtime(showtime.id).subscribe((res: any) => {
+                console.log("res : ",res)
+            });
+        })
         this.seats = this.seats.map((seat) => (showtime.seats?.includes(seat.id) ? { ...seat, isFree: false } : { ...seat, isFree: true }));
     }
     

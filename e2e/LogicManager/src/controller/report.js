@@ -4,11 +4,11 @@ import User from "../db/tables/user.table.js";
 
 export const createReport = async (req, res) => {
   try {
-    const id = req.params.id;
+    // const id = req.params.id;
     const { description ,email } = req.body;
     console.log(id);
 
-    if (!id || !description) {
+    if ( !description) {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
