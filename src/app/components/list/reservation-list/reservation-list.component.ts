@@ -14,8 +14,8 @@ export class ReservationListComponent implements OnInit {
       this.reservationService.reservationList.subscribe(res => {
           this.reservations = res;
           this.isEmpty = this.reservations.length == 0 ? true : false;
-          console.log(this.reservations);
-          console.log(this.isEmpty);
+        //   console.log(this.reservations);
+        //   console.log(this.isEmpty);
         });
         
     }

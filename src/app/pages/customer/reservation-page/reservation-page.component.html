@@ -1,6 +1,6 @@
 <app-customer-header></app-customer-header>
-<app-detailed-movieCard [movie]="movies[0]"></app-detailed-movieCard>
-<app-seat-list></app-seat-list>
+<app-detailed-movieCard [movie]="selectedMovie"></app-detailed-movieCard>
+<app-seat-list [showtimes]="selectedMovie.ShowTimes"></app-seat-list>
 <!-- <app-checkout></app-checkout> -->
 <div>
   <div

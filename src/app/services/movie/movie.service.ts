@@ -25,4 +25,7 @@ constructor(private http:HttpClient, private auth: AuthService) {
     return this.http.post(`${this.api}/movie/movies/`,{cinemaId: cinemaId});
  }
 
+ getMovie(movieId:number){
+    return this.http.get(`${this.api}/movie/movie/${movieId}`);
+ }
 }

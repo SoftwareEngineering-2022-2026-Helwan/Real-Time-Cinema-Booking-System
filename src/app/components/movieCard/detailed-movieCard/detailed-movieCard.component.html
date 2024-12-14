@@ -1,6 +1,6 @@
 <div
   class="container"
-  style="margin-top: 70px; border-bottom: 2px solid #ccc; margin-bottom: 50px"
+  style="margin-top: 70px; border-bottom: 2px solid #9a9ab0; margin-bottom: 50px"
 >
   <div class="row">
     <!-- Image Section -->
@@ -9,7 +9,7 @@
       style="margin-right: 20px; flex-direction: column"
     >
       <img
-        src="../../../../assets/imgs/posters/2.jpg"
+        [src]="base+movie.img"
         alt="Movie Poster"
         class="img-fluid shadow"
         style="position: relative; border-radius: 5px"
@@ -20,7 +20,7 @@
     <div class="details-section p-3 col-6">
       <div class="detail d-flex justify-content-between align-items-center">
         <h3 mat-subheader class="label">Name</h3>
-        <p class="value">{{ movie.name }}</p>
+        <p class="value">{{ movie.title }}</p>
       </div>
       <div class="detail d-flex justify-content-between align-items-center">
         <h3 mat-subheader class="label">Category</h3>
@@ -32,11 +32,11 @@
       </div>
       <div class="detail d-flex justify-content-between align-items-center">
         <h3 mat-subheader class="label">Cinema</h3>
-        <p class="value">{{ movie.cinema }}</p>
+        <p class="value">{{ movie.Cinema.name }}</p>
       </div>
       <div class="detail d-flex justify-content-between align-items-center">
         <h3 mat-subheader class="label">Starring</h3>
-        <p class="value">{{ movie.starring }}</p>
+        <p class="value">{{ movie.staring }}</p>
       </div>
       <div class="detail d-flex justify-content-between align-items-center">
         <h3 mat-subheader class="label">Description</h3>

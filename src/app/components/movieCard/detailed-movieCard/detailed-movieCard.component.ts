@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../../interfaces/movie.interface';
+import { MovieService } from 'src/app/services/movie/movie.service';
 
 @Component({
   selector: 'app-detailed-movieCard',
@@ -21,10 +22,13 @@ to display the card in good shape apply this css
 */ 
 
 export class DetailedMovieCardComponent implements OnInit {
+base: any;
 
-  constructor() { }
+  constructor(private movieSrc: MovieService) {
+    this.base = this.movieSrc.base;
+   }
 
-  @Input() movie !: Movie;
+  @Input() movie !:any;
 
   ngOnInit() {
   }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ShowTimes } from '../../interfaces/showtime.interface';
 import mqtt from 'mqtt';
-import { Subject } from 'rxjs';
+import { Subject, SubjectLike } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -11,6 +11,8 @@ export class ReservationService {
 
     api = 'http://localhost:8081/api';
     client!: mqtt.MqttClient;
+    selectedShowTime: Subject<any> = new Subject<any>();
+
     seatsByShowtime: {id: number, seats: string[]}[]  = [
         {
             id: 1,
@@ -35,7 +37,10 @@ export class ReservationService {
     {
         this.http.get(`${this.api}/reservation/showReservations/${id}`, {headers: {"Authorization": `Bearer ${sessionStorage.getItem('token')}` }}).subscribe((res:any) => this.reservationList.next(res));
     }
-    
+    getSeatsByShowtime(id: number)
+    {
+        return this.http.get(`${this.api}/reservation/getReservation/${id}`, {headers: {"Authorization": `Bearer ${sessionStorage.getItem('token')}` }});
+    }
     cancelReservation(id: number)
     {
         return this.http.delete(`${this.api}/reservation/canncelReservation/${id}`, {headers: {"Authorization": `Bearer ${sessionStorage.getItem('token')}` }});
@@ -56,11 +61,11 @@ export class ReservationService {
 
     listenTo(showtime: number, seat: string) {
         this.client.subscribe(`st/${showtime}/s/${seat}/response`);
-        console.log(`Subscribed to st/${showtime}/s/${seat}/response`);
+        // console.log(`Subscribed to st/${showtime}/s/${seat}/response`);
         this.client.on('message', (topic, message) => {
             if(topic == `st/${showtime}/s/${seat}/response`)
             {
-                console.log("topic: ",topic);
+                // console.log("topic: ",topic);
                 this.reservationResponse.next({topic,message:JSON.parse(message.toString())});
             }
         });

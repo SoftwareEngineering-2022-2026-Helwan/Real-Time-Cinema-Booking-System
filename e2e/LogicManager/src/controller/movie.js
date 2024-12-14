@@ -105,15 +105,15 @@ export const getMovieById = async (req, res) => {
   try {
     const movie = await Movie.findByPk(id, {
       include: [
-        { model: Cinema, attributes: ["name", "Location", "id"] },
-        { model: showtime, required: false, attributes: ["id"] },
+        { model: Cinema, attributes: ["name", "Location", "ID"] },
+        { model: showtime, required: false, attributes: ["id", "showTime"] },
       ],
     });
 
     if (!movie) {
       return res.status(404).json({ message: "Movie not found" });
     }
-    client.set("movie" + movie.id, JSON.stringify(movie));
+    // client.set("movie" + movie.id, JSON.stringify(movie));
     res.status(200).json(movie);
   } catch (error) {
     console.error("Error fetching movie:", error);

@@ -23,12 +23,13 @@ reservationRouter.post(
 
 reservationRouter.get("/showReservations/:id", getReservations);
 
-reservationRouter.get(
-  "/getReservation/:id",
-  editKey("reservation"),
-  getKey,
-  getReservationById
-);
+reservationRouter.get( "/getReservation/:id",  getReservationById);
+// reservationRouter.get(
+//   "/getReservation/:id",
+//   editKey("reservation"),
+//   getKey,
+//   getReservationById
+// );
 
 reservationRouter.delete("/canncelReservation/:id", deleteReservation);
 

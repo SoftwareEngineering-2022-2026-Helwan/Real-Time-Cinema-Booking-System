@@ -68,12 +68,12 @@ export const getReservations = async (req, res) => {
 export const getReservationById = async (req, res) => {
   try {
     const { id } = req.params;
-    const reservation = await Reservation.findByPk(id, {
+    const reservation = await Reservation.findAll({where: {showTimeId: id}}, {
       include: [
-        { model: Cinema },
-        { model: Movie },
-        { model: ShowTime },
-        { model: User },
+        { model: Cinema, attributes: ["name", "Location", "ID"] },
+        { model: Movie , attributes: ["title", "id"]},
+        { model: ShowTime, attributes: ["showTime", 'id'] },
+        { model: User , attributes: ['id']},
       ],
     });
 

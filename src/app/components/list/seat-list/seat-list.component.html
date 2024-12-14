@@ -3,9 +3,10 @@
     <h3>Showtimes</h3>
     <mat-form-field>
       <mat-label>Choose an option</mat-label>
-      <mat-select (selectionChange)="selectionChange($event.value)">
-        <ng-container *ngFor="let showTime of showTimes; let i = index">
-          <mat-option [value]="showTime">{{ showTime.showtime }}</mat-option>
+      <mat-select (selectionChange)="selectionChange($event.value)" >
+        <ng-container *ngFor="let showTime of showtimes; let i = index">
+          <mat-option [value]="showTime.id" *ngIf="i == 0" selected>{{ showTime.showTime }}</mat-option>
+          <mat-option [value]="showTime.id" *ngIf="i != 0">{{ showTime.showTime }}</mat-option>
         </ng-container>
       </mat-select>
     </mat-form-field>

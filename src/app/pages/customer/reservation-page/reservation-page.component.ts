@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MovieService } from 'src/app/services/movie/movie.service';
 
 @Component({
   selector: 'app-reservation-page',
@@ -8,13 +10,23 @@ import { Component, OnInit } from '@angular/core';
 export class ReservationPageComponent implements OnInit {
 
   imgTag:any;
-  constructor() {
+  movieId: number = 0;
+  constructor(private activeRoute: ActivatedRoute, private movieSerice: MovieService) {
     this.imgTag = document.createElement("img");
     let image = "../../../../assets/imgs/mapMarker.svg";
     this.imgTag.src = image;
     this.imgTag.style.width = "30px";
+    this.activeRoute.paramMap.subscribe(params => {
+        this.movieId = (Number)(params.get('movieId'));
+        console.log(this.movieId);
+        this.movieSerice.getMovie(this.movieId).subscribe((res: any) => {
+            console.log(res);
+            this.selectedMovie = res;
+        });
+    });
   }
 
+  selectedMovie: any = {};
   ngOnInit() {
     const parser = new DOMParser();
     const svgString = `<svg fill="#E2EBEF" stroke="#04141B" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

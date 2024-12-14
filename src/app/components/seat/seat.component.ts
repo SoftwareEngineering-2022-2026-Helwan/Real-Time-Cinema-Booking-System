@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Seat } from 'src/app/interfaces/seat.interface';
 import { ShowTimes } from 'src/app/interfaces/showtime.interface';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { ReservationService } from 'src/app/services/reservation/reservation.service';
 
 @Component({
@@ -38,9 +39,9 @@ export class SeatComponent implements OnInit, OnDestroy {
         })
     }
     
-    @Input() seat!: Seat;
-    @Input() showtime!: ShowTimes ;
-    constructor(private reservation: ReservationService) {
+    @Input() seat!: any;
+    @Input() showtime!: any ;
+    constructor(private reservation: ReservationService, private auth: AuthService) {
     }
     userReservation!: {
         userID: number;
@@ -50,9 +51,16 @@ export class SeatComponent implements OnInit, OnDestroy {
         
         this.reservation.listenTo(this.showtime?.id, this.seat.id);
         this.userReservation = {
-            userID: 1,
+            userID: this.auth.decodeToken().id,
             seatReserved: this.reservation.seatsByShowtime.find(showtime => showtime.id == this.showtime?.id)?.seats ?? []
         };
+        console.log("curr st id: ",this.showtime?.id);
+        this.reservation.selectedShowTime.subscribe((showtime: any) => {
+            this.reservation.getSeatsByShowtime(showtime.id).subscribe((res: any) => {
+                console.log("res : ",res)
+            });
+        })
+
     }
 
 
