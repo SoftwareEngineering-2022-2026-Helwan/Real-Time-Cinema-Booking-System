@@ -3,20 +3,21 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{ reservation.movie }}
+          {{ reservation.Movie.title }}
         </mat-panel-title>
         <mat-panel-description>
-          {{ reservation.showTime }}
+          {{ reservation.ShowTime.showTime }}
         </mat-panel-description>
       </mat-expansion-panel-header>
       <mat-card class="movie-details">
         <h3>{{ reservation.movie }}</h3>
-        <p><strong>Show Time:</strong> {{ reservation.showTime }}</p>
-        <p><strong>Reservation number:</strong> {{ reservation.reservationNumber }}</p>
+        <p><strong>Show Time:</strong> {{ reservation.ShowTime.showTime }}</p>
+        <p><strong>Reservation number:</strong> {{ reservation.id }}</p>
         <p><strong>Seats:</strong> {{ reservation.seats.join(', ') }}</p>
-        <p><strong>Total:</strong> ${{ reservation.total }}</p>
-      <div class="cancel-button">
-        <button mat-button color="mat-warn" (click)="cancelReservation(reservation.reservationNumber)" style="background-color: rgb(182, 48, 48); border-radius: 20px;padding: 8px 16px;">Cancel</button>
+        <p><strong>Total:</strong> ${{ reservation.price }}</p>
+      <div class="cancel-button" >
+        <a (click)="cancelReservation(reservation.id)" mat-button color="mat-warn"  style="background-color: rgb(182, 48, 48); border-radius: 20px;padding: 8px 16px;">Cancel</a>
+        <!-- <button mat-button color="mat-warn"  style="background-color: rgb(182, 48, 48); border-radius: 20px;padding: 8px 16px;">Cancel</button> -->
       </div>
     </mat-card>
   </mat-expansion-panel>

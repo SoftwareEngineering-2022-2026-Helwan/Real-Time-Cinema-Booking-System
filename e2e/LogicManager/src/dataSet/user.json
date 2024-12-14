@@ -1,0 +1,171 @@
+[
+  {
+    "fname": "Admin",
+    "lname": "admin",
+    "phone": "1234567890",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "admin",
+    "email": "admin@mail.com"
+  },
+  {
+    "fname": "John",
+    "lname": "Doe",
+    "phone": "1234567890",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "vendor",
+    "email": "v1@mail.com"
+  },
+  {
+    "fname": "Jane",
+    "lname": "Smith",
+    "phone": "0987654321",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "customer",
+    "email": "c1@mail.com"
+  },
+  {
+    "fname": "Alice",
+    "lname": "Johnson",
+    "phone": "1122334455",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "customer",
+    "email": "alice.johnson@example.com"
+  },
+  {
+    "fname": "Bob",
+    "lname": "Brown",
+    "phone": "2233445566",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "vendor",
+    "email": "bob.brown@example.com"
+  },
+  {
+    "fname": "Charlie",
+    "lname": "Davis",
+    "phone": "3344556677",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "customer",
+    "email": "charlie.davis@example.com"
+  },
+  {
+    "fname": "Diana",
+    "lname": "Miller",
+    "phone": "4455667788",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "vendor",
+    "email": "diana.miller@example.com"
+  },
+  {
+    "fname": "Eve",
+    "lname": "Wilson",
+    "phone": "5566778899",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "customer",
+    "email": "eve.wilson@example.com"
+  },
+  {
+    "fname": "Frank",
+    "lname": "Moore",
+    "phone": "6677889900",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "vendor",
+    "email": "frank.moore@example.com"
+  },
+  {
+    "fname": "Grace",
+    "lname": "Taylor",
+    "phone": "7788990011",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "customer",
+    "email": "grace.taylor@example.com"
+  },
+  {
+    "fname": "Hank",
+    "lname": "Anderson",
+    "phone": "8899001122",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "vendor",
+    "email": "hank.anderson@example.com"
+  },
+  {
+    "fname": "Ivy",
+    "lname": "Harris",
+    "phone": "9001122334",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "customer",
+    "email": "ivy.harris@example.com"
+  },
+  {
+    "fname": "Jack",
+    "lname": "Green",
+    "phone": "1122334455",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "vendor",
+    "email": "jack.green@example.com"
+  },
+  {
+    "fname": "Karen",
+    "lname": "Black",
+    "phone": "2233445566",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "customer",
+    "email": "karen.black@example.com"
+  },
+  {
+    "fname": "Leo",
+    "lname": "White",
+    "phone": "3344556677",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "vendor",
+    "email": "leo.white@example.com"
+  },
+  {
+    "fname": "Mia",
+    "lname": "Martin",
+    "phone": "4455667788",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "customer",
+    "email": "mia.martin@example.com"
+  },
+  {
+    "fname": "Nathan",
+    "lname": "King",
+    "phone": "5566778899",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "vendor",
+    "email": "nathan.king@example.com"
+  },
+  {
+    "fname": "Olivia",
+    "lname": "Clark",
+    "phone": "6677889900",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "customer",
+    "email": "olivia.clark@example.com"
+  },
+  {
+    "fname": "Peter",
+    "lname": "Lewis",
+    "phone": "7788990011",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "vendor",
+    "email": "peter.lewis@example.com"
+  },
+  {
+    "fname": "Quinn",
+    "lname": "Walker",
+    "phone": "8899001122",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "customer",
+    "email": "quinn.walker@example.com"
+  },
+  {
+    "fname": "Rachel",
+    "lname": "Hall",
+    "phone": "9001122334",
+    "password": "$2b$10$tkg6Ip1lpWh6liCyKsZ8WOftUxjBf5tWDcEHKqPdjkzD.ioMdwqhy",
+    "role": "vendor",
+    "email": "rachel.hall@example.com"
+  }
+]
+

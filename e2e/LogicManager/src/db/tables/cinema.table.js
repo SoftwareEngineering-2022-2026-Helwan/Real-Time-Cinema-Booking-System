@@ -17,6 +17,10 @@ const Cinema = sequelize.define(
       type: DataTypes.JSON,
       allowNull: false,
     },
+    vendorId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     timestamps: true,

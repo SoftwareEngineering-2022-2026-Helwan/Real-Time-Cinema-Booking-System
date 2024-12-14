@@ -11,7 +11,12 @@
   >
     Reservation List
   </h2>
+  <!-- <ng-template > -->
+      <div  *ngIf="isEmpty" style="text-align: center; color: var(--primary); font-style: italic; font-weight: 500; margin-top: 15px; margin-bottom: 0px;">No reservations found.</div>
+  <!-- </ng-template> -->
     <ng-container *ngFor="let reservation of reservations">
-        <app-reservation-list-item [reservation]="reservation"></app-reservation-list-item>
+        <ng-container *ngIf="!isEmpty">
+            <app-reservation-list-item [reservation]="reservation"></app-reservation-list-item>
+        </ng-container>
     </ng-container>
 </div>

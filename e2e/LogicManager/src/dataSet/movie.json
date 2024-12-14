@@ -1,0 +1,183 @@
+[
+  {
+    "title": "The Great Adventure",
+    "staring": "John Doe, Jane Smith",
+    "img": "1.jpg",
+    "category": "Action",
+    "duration": "120 min",
+    "description": "An epic adventure of a lifetime.",
+    "cinemaId": 1
+  },
+  {
+    "title": "Romantic Escape",
+    "staring": "Alice Johnson, Bob Brown",
+    "img": "2.jpg",
+    "category": "Romance",
+    "duration": "105 min",
+    "description": "A heartwarming romantic journey.",
+    "cinemaId": 2
+  },
+  {
+    "title": "Mystery Mansion",
+    "staring": "Chris Evans, Emily Clark",
+    "img": "3.jpg",
+    "category": "Mystery",
+    "duration": "130 min",
+    "description": "A thrilling mystery in an old mansion.",
+    "cinemaId": 3
+  },
+  {
+    "title": "Comedy Night",
+    "staring": "Kevin Hart, Amy Poehler",
+    "img": "4.jpg",
+    "category": "Comedy",
+    "duration": "95 min",
+    "description": "A night full of laughs and fun.",
+    "cinemaId": 4
+  },
+  {
+    "title": "Sci-Fi Odyssey",
+    "staring": "Tom Cruise, Scarlett Johansson",
+    "img": "5.jpg",
+    "category": "Sci-Fi",
+    "duration": "140 min",
+    "description": "A journey through space and time.",
+    "cinemaId": 5
+  },
+  {
+    "title": "Horror House",
+    "staring": "Linda Blair, Jack Nicholson",
+    "img": "6.jpg",
+    "category": "Horror",
+    "duration": "110 min",
+    "description": "A terrifying tale of a haunted house.",
+    "cinemaId": 6
+  },
+  {
+    "title": "Animated Dreams",
+    "staring": "Voice Cast",
+    "img": "7.jpg",
+    "category": "Animation",
+    "duration": "90 min",
+    "description": "A magical animated adventure.",
+    "cinemaId": 7
+  },
+  {
+    "title": "Historical Epic",
+    "staring": "Daniel Day-Lewis, Cate Blanchett",
+    "img": "8.jpg",
+    "category": "Historical",
+    "duration": "150 min",
+    "description": "A grand tale from history.",
+    "cinemaId": 8
+  },
+  {
+    "title": "Fantasy World",
+    "staring": "Elijah Wood, Ian McKellen",
+    "img": "9.jpg",
+    "category": "Fantasy",
+    "duration": "135 min",
+    "description": "A fantastical journey in a magical world.",
+    "cinemaId": 9
+  },
+  {
+    "title": "Documentary Life",
+    "staring": "Narrator",
+    "img": "10.jpg",
+    "category": "Documentary",
+    "duration": "85 min",
+    "description": "An insightful look into real-life events.",
+    "cinemaId": 10
+  },
+  {
+    "title": "The Great Adventure",
+    "staring": "John Doe, Jane Smith",
+    "img": "11.jpg",
+    "category": "Action",
+    "duration": "120 min",
+    "description": "An epic adventure of a lifetime.",
+    "cinemaId": 11
+  },
+  {
+    "title": "Romantic Escape",
+    "staring": "Alice Johnson, Bob Brown",
+    "img": "12.jpg",
+    "category": "Romance",
+    "duration": "105 min",
+    "description": "A heartwarming romantic journey.",
+    "cinemaId": 12
+  },
+  {
+    "title": "Mystery Mansion",
+    "staring": "Chris Evans, Emily Clark",
+    "img": "13.jpg",
+    "category": "Mystery",
+    "duration": "130 min",
+    "description": "A thrilling mystery in an old mansion.",
+    "cinemaId": 13
+  },
+  {
+    "title": "Comedy Night",
+    "staring": "Kevin Hart, Amy Poehler",
+    "img": "14.jpg",
+    "category": "Comedy",
+    "duration": "95 min",
+    "description": "A night full of laughs and fun.",
+    "cinemaId": 14
+  },
+  {
+    "title": "Sci-Fi Odyssey",
+    "staring": "Tom Cruise, Scarlett Johansson",
+    "img": "15.jpg",
+    "category": "Sci-Fi",
+    "duration": "140 min",
+    "description": "A journey through space and time.",
+    "cinemaId": 15
+  },
+  {
+    "title": "Horror House",
+    "staring": "Linda Blair, Jack Nicholson",
+    "img": "16.jpg",
+    "category": "Horror",
+    "duration": "110 min",
+    "description": "A terrifying tale of a haunted house.",
+    "cinemaId": 16
+  },
+  {
+    "title": "Animated Dreams",
+    "staring": "Voice Cast",
+    "img": "17.jpg",
+    "category": "Animation",
+    "duration": "90 min",
+    "description": "A magical animated adventure.",
+    "cinemaId": 17
+  },
+  {
+    "title": "Historical Epic",
+    "staring": "Daniel Day-Lewis, Cate Blanchett",
+    "img": "18.jpg",
+    "category": "Historical",
+    "duration": "150 min",
+    "description": "A grand tale from history.",
+    "cinemaId": 18
+  },
+  {
+    "title": "Fantasy World",
+    "staring": "Elijah Wood, Ian McKellen",
+    "img": "19.jpg",
+    "category": "Fantasy",
+    "duration": "135 min",
+    "description": "A fantastical journey in a magical world.",
+    "cinemaId": 19
+  },
+  {
+    "title": "Documentary Life",
+    "staring": "Narrator",
+    "img": "20.jpg",
+    "category": "Documentary",
+    "duration": "85 min",
+    "description": "An insightful look into real-life events.",
+    "cinemaId": 20
+  }
+]
+

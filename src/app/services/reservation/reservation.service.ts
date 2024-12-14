@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { ShowTimes } from '../../interfaces/showtime.interface';
 import mqtt from 'mqtt';
 import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservationService {
 
+    api = 'http://localhost:8081/api';
     client!: mqtt.MqttClient;
     seatsByShowtime: {id: number, seats: string[]}[]  = [
         {
@@ -16,6 +18,7 @@ export class ReservationService {
         }
     ];
 
+    reservationList: Subject<any> = new Subject<any>();
     reservationResponse: Subject<any> = new Subject<any>();
     
     showtimes: ShowTimes[]=
@@ -24,8 +27,22 @@ export class ReservationService {
         { id: 2, showtime: '12:00', cinemaID: 1, movieID: 1, seats: ["B3", "B4"] },
         { id: 3, showtime: '14:00', cinemaID: 1, movieID: 1  },
     ];
-    constructor() { 
+    constructor(private http:HttpClient) { 
         this.connect();
+    }
+
+    getReservationList(id: number)
+    {
+        this.http.get(`${this.api}/reservation/showReservations/${id}`, {headers: {"Authorization": `Bearer ${sessionStorage.getItem('token')}` }}).subscribe((res:any) => this.reservationList.next(res));
+    }
+    
+    cancelReservation(id: number)
+    {
+        return this.http.delete(`${this.api}/reservation/canncelReservation/${id}`, {headers: {"Authorization": `Bearer ${sessionStorage.getItem('token')}` }});
+        // this.http.get(`${this.api}/reservation/showReservations/${id}`, {headers: {"Authorization": `Bearer ${sessionStorage.getItem('token')}` }}).subscribe((res:any) => {
+        //     this.reservationList.next(res);
+        //     console.log(res);   
+        // });
     }
 
     connect()

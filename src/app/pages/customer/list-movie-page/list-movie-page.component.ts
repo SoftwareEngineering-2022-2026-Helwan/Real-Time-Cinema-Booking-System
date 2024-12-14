@@ -3,6 +3,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormControl, FormGroup, FormsModule, Validators} from '@angular/forms';
+import { MovieService } from '../../../services/movie/movie.service';
+import { CinemaService } from 'src/app/services/cinema/cinema.service';
 
 @Component({
   selector: 'app-list-movie-page',
@@ -13,25 +15,43 @@ export class ListMoviePageComponent implements OnInit {
 
   selectedValue: string = "";
 
-  constructor() { }
+  constructor(private movieService: MovieService, private cinemaService: CinemaService) { }
 
   searchForm : FormGroup = new FormGroup({
-    searchHeader : new FormControl(null),
-    searchFilter : new FormControl(null),
+    searchHeader : new FormControl(""),
+    searchFilter : new FormControl(""),
   })
 
   cinemas: any[] = [
-    {id: "c1", value:"Cinema1"},
-    {id: "c2", value:"Cinema2"},
-    {id: "c3", value:"Cinema3"},
-    {id: "c4", value:"Cinema4"},
-    {id: "c5", value:"Cinema5"},
+    {value:"Cinema1"},
+    {value:"Cinema2"},
+    {value:"Cinema3"},
+    {value:"Cinema4"},
+    {value:"Cinema5"},
   ];
 
+  fillter()
+  {
+    console.log(this.selectedValue);
+    this.movieService.filter.next(this.selectedValue);
+  }
   ngOnInit() {
+    this.cinemaService.getCinemas().subscribe((res:any) => {
+        console.log(res);
+        this.cinemas = res.map((cinema:any) => {
+            return {value: cinema.name};
+        })
+    })
   }
 
   submitSearchForm(form : FormGroup){
     console.log(form.value);
-  }
+    
+    console.log(form.value.searchHeader);
+    this.movieService.search.next(form.value.searchHeader);
+    
+
+    }
+
+  
 }

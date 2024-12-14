@@ -1,0 +1,142 @@
+[
+  {
+    "description": {
+      "issue": "Screen flickering",
+      "details": "The screen flickers intermittently during the movie."
+    },
+    "email": "john.doe@example.com"
+  },
+  {
+    "description": {
+      "issue": "Sound issues",
+      "details": "The sound is too low in the theater."
+    },
+    "email": "jane.smith@example.com"
+  },
+  {
+    "description": {
+      "issue": "Seat broken",
+      "details": "Seat number 12 in row F is broken."
+    },
+    "email": "alice.johnson@example.com"
+  },
+  {
+    "description": {
+      "issue": "Air conditioning",
+      "details": "The air conditioning is not working properly."
+    },
+    "email": "bob.brown@example.com"
+  },
+  {
+    "description": {
+      "issue": "Dirty floor",
+      "details": "The floor in the theater is dirty."
+    },
+    "email": "charlie.davis@example.com"
+  },
+  {
+    "description": {
+      "issue": "Late start",
+      "details": "The movie started 15 minutes late."
+    },
+    "email": "diana.miller@example.com"
+  },
+  {
+    "description": {
+      "issue": "Projection issue",
+      "details": "The projection is blurry."
+    },
+    "email": "eve.wilson@example.com"
+  },
+  {
+    "description": {
+      "issue": "Rude staff",
+      "details": "The staff was rude at the ticket counter."
+    },
+    "email": "frank.moore@example.com"
+  },
+  {
+    "description": {
+      "issue": "No subtitles",
+      "details": "The movie did not have subtitles as advertised."
+    },
+    "email": "grace.taylor@example.com"
+  },
+  {
+    "description": {
+      "issue": "Overpriced snacks",
+      "details": "The snacks are overpriced."
+    },
+    "email": "hank.anderson@example.com"
+  },
+  {
+    "description": {
+      "issue": "Screen flickering",
+      "details": "The screen flickers intermittently during the movie."
+    },
+    "email": "ivy.harris@example.com"
+  },
+  {
+    "description": {
+      "issue": "Sound issues",
+      "details": "The sound is too low in the theater."
+    },
+    "email": "jack.green@example.com"
+  },
+  {
+    "description": {
+      "issue": "Seat broken",
+      "details": "Seat number 12 in row F is broken."
+    },
+    "email": "karen.black@example.com"
+  },
+  {
+    "description": {
+      "issue": "Air conditioning",
+      "details": "The air conditioning is not working properly."
+    },
+    "email": "leo.white@example.com"
+  },
+  {
+    "description": {
+      "issue": "Dirty floor",
+      "details": "The floor in the theater is dirty."
+    },
+    "email": "mia.martin@example.com"
+  },
+  {
+    "description": {
+      "issue": "Late start",
+      "details": "The movie started 15 minutes late."
+    },
+    "email": "nathan.king@example.com"
+  },
+  {
+    "description": {
+      "issue": "Projection issue",
+      "details": "The projection is blurry."
+    },
+    "email": "olivia.clark@example.com"
+  },
+  {
+    "description": {
+      "issue": "Rude staff",
+      "details": "The staff was rude at the ticket counter."
+    },
+    "email": "peter.lewis@example.com"
+  },
+  {
+    "description": {
+      "issue": "No subtitles",
+      "details": "The movie did not have subtitles as advertised."
+    },
+    "email": "quinn.walker@example.com"
+  },
+  {
+    "description": {
+      "issue": "Overpriced snacks",
+      "details": "The snacks are overpriced."
+    },
+    "email": "rachel.hall@example.com"
+  }
+]

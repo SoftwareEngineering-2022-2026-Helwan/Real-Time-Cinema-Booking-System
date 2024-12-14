@@ -1,4 +1,4 @@
-import { sequelize} from "../index.js";
+import { sequelize } from "../index.js";
 import { DataTypes } from "sequelize";
 
 const Report = sequelize.define("Report", {
@@ -8,7 +8,11 @@ const Report = sequelize.define("Report", {
     autoIncrement: true,
   },
   description: {
-    type: DataTypes.JSON, 
+    type: DataTypes.JSON,
+    allowNull: false,
+  },
+  email: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
 });

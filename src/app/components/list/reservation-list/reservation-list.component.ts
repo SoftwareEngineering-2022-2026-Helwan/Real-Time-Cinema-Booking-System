@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { ReservationService } from 'src/app/services/reservation/reservation.service';
 
 @Component({
   selector: 'app-reservation-list',
@@ -7,26 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationListComponent implements OnInit {
 
-  constructor() { }
-  reservations = [
-    {
-      movie: 'Inception',
-      showTime: '7:00 PM',
-      reservationNumber: '1ad4da',
-      seats: ['A1', 'A2'],
-      total: 50,
-    },
-    {
-      movie: 'The God father',
-      showTime: '9:00 PM',
-      reservationNumber: '2bc5fe',
-      seats: ['B3', 'B4'],
-      total: 60,
-    },
-  ];
-
-
-  ngOnInit() {
+  constructor(private reservationService: ReservationService,private auth: AuthService) {
+      let id = this.auth.decodeToken().id;
+      this.reservationService.reservationList.subscribe(res => {
+          this.reservations = res;
+          this.isEmpty = this.reservations.length == 0 ? true : false;
+          console.log(this.reservations);
+          console.log(this.isEmpty);
+        });
+        
+    }
+    reservations = [];
+    
+    isEmpty=false;
+    
+    ngOnInit() {
+    let id = this.auth.decodeToken().id;
+      this.reservationService.getReservationList(id);
+    // console.log(id);
   }
 
 }

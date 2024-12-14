@@ -5,23 +5,31 @@ import {
   getReservationById,
   deleteReservation,
   updateReservation,
-} from "../controller/reservation.js"; 
+  PriceOfCinema,
+} from "../controller/reservation.js";
 
 import { editKey } from "../middleWare/editkey.js";
 import { getKey } from "../middleWare/getKey.js";
+import { protect, restrictTo } from "../middleWare/auth.js";
 export const reservationRouter = express.Router();
 
+reservationRouter.get("/dashBoard/vendor/:vendorId",protect,restrictTo("vendor"), PriceOfCinema);
 
-reservationRouter.post("/reservation", createReservation);
+reservationRouter.use(protect, restrictTo("customer"));
+reservationRouter.post(
+  "/createReservation/:cinemaId/:movieId/:userId",
+  createReservation
+);
 
+reservationRouter.get("/showReservations/:id", getReservations);
 
-reservationRouter.get("/reservation", getReservations);
+reservationRouter.get(
+  "/getReservation/:id",
+  editKey("reservation"),
+  getKey,
+  getReservationById
+);
 
+reservationRouter.delete("/canncelReservation/:id", deleteReservation);
 
-reservationRouter.get("/reservation/:id",editKey('reservation'),getKey, getReservationById);
-
-
-reservationRouter.delete("/reservation", deleteReservation);
-
-reservationRouter.put("/reservation", updateReservation);
-
+reservationRouter.put("/updateReservation/:id", updateReservation);

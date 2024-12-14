@@ -1,5 +1,5 @@
 <app-admin-header></app-admin-header>
-<div class="feedback-list">
+<div class="feedback-list" style="height: calc(100vh - 60px); overflow: auto;">
   <h2
     style="
       display: flex;
@@ -8,6 +8,7 @@
       color: var(--primary);
       font-style: italic;
       padding: 10px;
+      margin-top: 60px;
     "
   >
     Feedback List
@@ -16,4 +17,6 @@
     [feedbackList]="feedbackList"
   ></app-feedback-list-item>
 </div>
-<app-footer></app-footer>
+<div style="position: relative; bottom: 0; width: 100%;">
+    <app-footer></app-footer>
+</div>

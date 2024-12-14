@@ -13,9 +13,9 @@ export class AppComponent {
 
   @ViewChild('openButton',{static: false}) openButton!: ElementRef;
 
-  ClickButton(){
-    this.openButton.nativeElement.click();
-  }
+//   ClickButton(){
+//     this.openButton.nativeElement.click();
+//   }
 
 
 
@@ -23,15 +23,15 @@ export class AppComponent {
 
   constructor(public dialog: MatDialog) {
 
-    this.authService.setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
-    console.log(this.authService.decodeToken());
+    // this.authService.setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
+    // console.log(this.authService.decodeToken());
   }
 
 
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(SignupComponent);
-  }
+//   openDialog(): void {
+//     const dialogRef = this.dialog.open(SignupComponent);
+//   }
 
   movies = [
     {
@@ -58,9 +58,9 @@ export class AppComponent {
   ];
 
 ngOnInit(): void {
-  setTimeout(() => {
-    this.ClickButton();
-  },2000);
+//   setTimeout(() => {
+//     this.ClickButton();
+//   },2000);
 
 }
 

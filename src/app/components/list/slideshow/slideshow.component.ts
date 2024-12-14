@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/services/movie/movie.service';
 
 @Component({
   selector: 'app-slideshow',
@@ -16,9 +17,26 @@ export class SlideshowComponent implements OnInit {
   ];
 
  
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+    this.movieService.getSlideShow().subscribe((movies:any) => 
+        {
+            // console.log(movies);
+            // this.movies = movies
+            this.movies = movies.map(
+            (movie:any) =>
+            {
+                let img ; 
+                movie.Movies.forEach((details:any)=>{
+                    // console.log(details.img);
+                    img = {image: `${this.movieService.base}${details.img}`};
+                });
+                return img;
+            }
+            );
+        }
+    );
   }
 
 }

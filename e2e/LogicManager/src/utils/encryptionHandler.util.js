@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-class EncryptionHandler {
+export default class EncryptionHandler {
   #salt;
   constructor(salt = 10) {
     this.#salt = salt;
@@ -22,4 +22,3 @@ class EncryptionHandler {
   }
 }
 
-module.exports = EncryptionHandler;

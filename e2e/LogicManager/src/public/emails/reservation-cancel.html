@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Cancellation Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        p{
+            margin: 12px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+        .button {
+            margin-top: 15px;
+            background-color: transparent;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border-width: 1px;
+            border-color: black;
+            border-style: solid;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h2>Reservation Removed</h2>
+        </div>
+        <div class="content">
+            <p>Hello {{name}},</p>
+            <p>We emailed you to inform you that your reservation has been cancelled.</p>
+            <p><strong>Reservation ID:</strong>{{rid}}</p>
+            <p><strong>Movie: </strong>{{movie}}</p>
+            <p><strong>Show Time: </strong>{{showtime}}</p>
+            <button class="button">
+                <a style="text-decoration: none; color: inherit;" href="http://localhost:8081/reservation/{{movieId}}">re-open movie</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

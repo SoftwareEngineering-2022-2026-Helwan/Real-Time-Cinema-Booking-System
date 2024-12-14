@@ -1,0 +1,142 @@
+[
+  {
+    "hallNo": "1",
+    "showTime": "10:00 AM",
+    "cinemaId": 1,
+    "movieId": 1,
+    "isReleased": true
+  },
+  {
+    "hallNo": "2",
+    "showTime": "12:00 PM",
+    "cinemaId": 2,
+    "movieId": 2,
+    "isReleased": true
+  },
+  {
+    "hallNo": "3",
+    "showTime": "2:00 PM",
+    "cinemaId": 3,
+    "movieId": 3,
+    "isReleased": true
+  },
+  {
+    "hallNo": "4",
+    "showTime": "4:00 PM",
+    "cinemaId": 4,
+    "movieId": 4,
+    "isReleased": true
+  },
+  {
+    "hallNo": "5",
+    "showTime": "6:00 PM",
+    "cinemaId": 5,
+    "movieId": 5,
+    "isReleased": true
+  },
+  {
+    "hallNo": "6",
+    "showTime": "8:00 PM",
+    "cinemaId": 6,
+    "movieId": 6,
+    "isReleased": true
+  },
+  {
+    "hallNo": "7",
+    "showTime": "10:00 PM",
+    "cinemaId": 7,
+    "movieId": 7,
+    "isReleased": true
+  },
+  {
+    "hallNo": "8",
+    "showTime": "12:00 AM",
+    "cinemaId": 8,
+    "movieId": 8,
+    "isReleased": true
+  },
+  {
+    "hallNo": "9",
+    "showTime": "2:00 AM",
+    "cinemaId": 9,
+    "movieId": 9,
+    "isReleased": true
+  },
+  {
+    "hallNo": "10",
+    "showTime": "4:00 AM",
+    "cinemaId": 10,
+    "movieId": 10,
+    "isReleased": true
+  },
+  {
+    "hallNo": "11",
+    "showTime": "10:00 AM",
+    "cinemaId": 1,
+    "movieId": 1,
+    "isReleased": true
+  },
+  {
+    "hallNo": "12",
+    "showTime": "12:00 PM",
+    "cinemaId": 2,
+    "movieId": 2,
+    "isReleased": true
+  },
+  {
+    "hallNo": "13",
+    "showTime": "2:00 PM",
+    "cinemaId": 3,
+    "movieId": 3,
+    "isReleased": true
+  },
+  {
+    "hallNo": "14",
+    "showTime": "4:00 PM",
+    "cinemaId": 4,
+    "movieId": 4,
+    "isReleased": true
+  },
+  {
+    "hallNo": "15",
+    "showTime": "6:00 PM",
+    "cinemaId": 5,
+    "movieId": 5,
+    "isReleased": true
+  },
+  {
+    "hallNo": "16",
+    "showTime": "8:00 PM",
+    "cinemaId": 6,
+    "movieId": 6,
+    "isReleased": true
+  },
+  {
+    "hallNo": "17",
+    "showTime": "10:00 PM",
+    "cinemaId": 7,
+    "movieId": 7,
+    "isReleased": true
+  },
+  {
+    "hallNo": "18",
+    "showTime": "12:00 AM",
+    "cinemaId": 8,
+    "movieId": 8,
+    "isReleased": true
+  },
+  {
+    "hallNo": "19",
+    "showTime": "2:00 AM",
+    "cinemaId": 9,
+    "movieId": 9,
+    "isReleased": true
+  },
+  {
+    "hallNo": "20",
+    "showTime": "4:00 AM",
+    "cinemaId": 10,
+    "movieId": 10,
+    "isReleased": true
+  }
+]

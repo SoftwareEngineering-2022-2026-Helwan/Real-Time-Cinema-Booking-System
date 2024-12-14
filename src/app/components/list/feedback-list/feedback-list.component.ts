@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FeedbackService } from '../../../services/feedback/feedback.service';
 
 @Component({
   selector: 'app-feedback-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private feedbackService: FeedbackService) { }
   feedbackList = [
     {
       email: 'user1@mail.com',
@@ -19,6 +20,20 @@ export class FeedbackListComponent implements OnInit {
     },]
 
   ngOnInit() {
+    this.feedbackService.getReports().subscribe(
+      (data:any )=> {
+        // this.feedbackList = data;
+        // console.log(data);
+        this.feedbackList = data.map((item: any) => {
+            let feedback = item.description.details;
+            // console.log(item.description);
+          return {
+            email: item.email,
+            feedback: feedback,
+          };
+        });
+      }
+    )
   }
 
 }

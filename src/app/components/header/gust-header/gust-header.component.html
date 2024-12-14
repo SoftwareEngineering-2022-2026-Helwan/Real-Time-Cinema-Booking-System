@@ -3,22 +3,32 @@
             <img class="img" src="../../assets/imgs/WhatsApp Image 2024-11-29 at 20.16.54_39526a40.jpg" width="60" height="60">
         </div>
         <div class="mydiv">
-            <button class='mybutton myspn' mat-button color="basic">
+            <button *ngIf="!isLogged" class='mybutton myspn' mat-button color="basic" routerLink="/">
                 <span>Home</span>
             </button>
-            <button class='mybutton myspn' mat-button color="basic">
+            <button *ngIf="isCustomer" class='mybutton myspn' mat-button color="basic" routerLink="/customer">
+                <span>Home</span>
+            </button>
+
+            <!-- <button *ngIf="authService.isVendor()" class='mybutton myspn' mat-button color="basic" routerLink="/vendor">
+                <span>Home</span>
+            </button>
+            <button *ngIf="authService.isAdmin()" class='mybutton myspn' mat-button color="basic" routerLink="/admin">
+                <span>Home</span>
+            </button> -->
+            <button class='mybutton myspn' mat-button color="basic" routerLink="/movies">
                 <span>List</span>
             </button>
-            <button class='mybutton myspn' mat-button color="basic">
+            <button class='mybutton myspn' mat-button color="basic" routerLink="/faq">
                 <span>FAQ</span>
             </button>
-            <button class='mybutton myspn' mat-button color="basic">
+            <button class='mybutton myspn' mat-button color="basic" routerLink="/feedback">
                 <span>Feedback</span>
             </button>
         </div>
         <div>
-            <button class='btn btn-warning' >Login</button>
-            <button class='btn btn-outline-warning'>SignUp</button>
+            <button class='btn btn-warning' routerLink="/login">Login</button>
+            <button class='btn btn-outline-warning' routerLink="/signup">SignUp</button>
         </div>
     </mat-toolbar>
 

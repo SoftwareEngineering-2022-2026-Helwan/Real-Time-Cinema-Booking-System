@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators, ValidatorFn} from '@angular/forms'
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +13,7 @@ export class SignupComponent implements OnInit,OnDestroy {
   showPass: Boolean = false;
   showVerifyPass: Boolean = false;
 
-  constructor() { }
+  constructor(private authService : AuthService, private router: Router) { }
 
   signupForm : FormGroup = new FormGroup({
     email : new FormControl(null,[Validators.required,Validators.email]),
@@ -69,8 +71,19 @@ export class SignupComponent implements OnInit,OnDestroy {
   }
   
 
-  submitSignupForm(form : FormGroup){
+  submitSignupForm(){
+    this.displayLoader();
+    let form = this.signupForm;
     console.log(form.value);
+    let data = form.value;
+    this.authService.authState.subscribe((res) => {
+      if(res){
+        this.router.navigateByUrl('/customer');
+      }else{
+       this.signupForm.reset(data); 
+      }
+    })
+    this.authService.signup(data.fname,data.lname,data.email,data.password,data.phone);
   }
 
   ngOnInit() {

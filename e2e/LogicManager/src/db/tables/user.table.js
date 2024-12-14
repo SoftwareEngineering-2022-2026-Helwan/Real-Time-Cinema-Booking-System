@@ -32,8 +32,29 @@ const User = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
-    validate: { isEmail: true },
+    //validate: { isEmail: true },
   },
+  passwordChangedAt: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
+});
+User.prototype.changedPasswordAfter = function (JWTTimestamp) {
+  if (this.passwordChangedAt) {
+    const changedTimestamp = parseInt(
+      this.passwordChangedAt.getTime() / 1000,
+      10
+    );
+    return JWTTimestamp < changedTimestamp;
+  }
+
+  return false;
+};
+User.beforeUpdate(async (user, options) => {
+  console.log("Before update hook triggered");
+  if (user.changed("password")) {
+    user.passwordChangedAt = new Date();
+  }
 });
 
 export default User;

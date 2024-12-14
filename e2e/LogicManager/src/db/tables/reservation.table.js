@@ -8,11 +8,27 @@ const Reservation = sequelize.define("Reservation", {
     autoIncrement: true,
   },
   seats: {
-    type: DataTypes.ARRAY(DataTypes.STRING), 
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: false,
   },
   price: {
     type: DataTypes.FLOAT,
+    allowNull: false,
+  },
+  cinemaId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  movieId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  showTimeId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  userId: {
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
 });

@@ -2,10 +2,14 @@ import fs   from "fs";
 import path from "path";
 import os   from "os";
 
-class ImageHandler {
-  #basePath = path.resolve(__dirname, "../public/img");
+import { fileURLToPath } from "url";
+export const __filename = fileURLToPath(import.meta.url);
+export const __dirname = path.dirname(__filename);
 
-  saveImage(imageFile) {
+export default class ImageHandler {
+  static #basePath = path.resolve(__dirname, "../public/image");
+
+  static saveImage(imageFile) {
     return new Promise((resolve, reject) => {
       const imageName = imageFile.originalname;
       const destinationPath = path.join(this.#basePath, imageName);
@@ -46,13 +50,13 @@ class ImageHandler {
   }
 
   getImage(imageName) {
-    const filePath = path.join(this.#basePath, imageName);
+    const filePath = path.join(ImageHandler.#basePath, imageName);
 
     if (fs.existsSync(filePath)) {
       const hostIP = this.getHostIP();
       const port = this.getPort();
 
-      const imageUrl = `http://${hostIP}:${port}/public/img/${imageName}`;
+      const imageUrl = `http://${hostIP}:${port}/public/image/${imageName}`;
       return imageUrl;
     } else {
       return "Image not found";
@@ -60,4 +64,3 @@ class ImageHandler {
   }
 }
 
-module.exports = ImageHandler;

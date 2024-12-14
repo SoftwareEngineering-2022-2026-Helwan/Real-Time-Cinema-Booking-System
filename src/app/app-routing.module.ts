@@ -13,7 +13,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { FeedbackListComponent } from './components/list/feedback-list/feedback-list.component';
 import { ReservationPageComponent } from './pages/customer/reservation-page/reservation-page.component';
-import { adminGuard, authGuard, customerGuard } from './services/auth/guards.guard';
+import { adminGuard, authGuard, customerGuard, vendorGuard } from './services/auth/guards.guard';
+import { ProfileComponent } from './components/profile/profile.component';
+import { VendorListPageComponent } from './pages/admin/vendor-list-page/vendor-list-page.component';
 
 const routes: Routes = [
     {
@@ -22,27 +24,44 @@ const routes: Routes = [
         component: GuestHomeComponent,
     },
     {
+        path: 'customer',
+        component: GuestHomeComponent,
+        canActivate: [authGuard,customerGuard]
+    },
+    {
         path: 'vendor',
         component: VendorHomeComponent,
+        canActivate: [authGuard,vendorGuard]
     },
     {
         path: 'movies',
         component: ListMoviePageComponent,
     },
     {
-        path: 'reservation',
+        path: 'reservation/:movieId',
         component: ReservationPageComponent,
-        // canActivate: [customerGuard,authGuard]
+        canActivate: [customerGuard]
     },
     {
         path: 'admin',
         component: AdminHomeComponent,
-        // canActivate: [adminGuard]
+        canActivate: [authGuard,adminGuard]
     },
+    {
+        path: 'vendor-list',
+        component: VendorListPageComponent,
+        canActivate: [authGuard,adminGuard]
+    }
+    ,
     {
         path: 'feedback-list',
         component: FeedbackListComponent,
-        // canActivate: [adminGuard]
+        canActivate: [authGuard,adminGuard]
+    },
+    {
+        path: 'profile',
+        component: ProfileComponent,
+        canActivate: [authGuard]
     },
     {
         path: 'faq',

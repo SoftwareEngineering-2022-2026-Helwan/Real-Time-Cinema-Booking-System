@@ -3,16 +3,16 @@
         <img class="img" src="../../assets/imgs/WhatsApp Image 2024-11-29 at 20.16.54_39526a40.jpg" width="60" height="60">
     </div>
     <div class="mydiv">
-        <button class='mybutton myspn' mat-button color="basic">
+        <button class='mybutton myspn' mat-button color="basic" routerLink="/customer">
             <span>Home</span>
         </button>
-        <button class='mybutton myspn' mat-button color="basic">
+        <button class='mybutton myspn' mat-button color="basic" routerLink="/movies">
             <span>Movie List</span>
         </button>
-        <button class='mybutton myspn' mat-button color="basic">
+        <button class='mybutton myspn' mat-button color="basic" routerLink="/faq">
             <span>FAQ</span>
         </button>
-        <button class='mybutton myspn' mat-button color="basic">
+        <button class='mybutton myspn' mat-button color="basic" routerLink="/feedback">
             <span>Feedback</span>
         </button>
     </div>
@@ -20,9 +20,9 @@
         <button mat-button [matMenuTriggerFor]="menu"><img class="img1" src="../../assets/imgs/images.jpeg" alt=""></button>
 
         <mat-menu #menu="matMenu">
-             <button mat-menu-item class="link" ><a href="#" class="link">Profile</a></button>
-             <button mat-menu-item class="link" ><a href="#" class="link" data-bs-toggle="modal" data-bs-target="#exampleModal">Reservations</a></button>
-             <button mat-menu-item ><button style="margin-left: 30px;" class='btn btn-warning' >LogOut</button></button>
+             <button mat-menu-item class="link" ><a href="#" class="link" routerLink="/profile">Profile</a></button>
+             <button mat-menu-item class="link"  data-bs-toggle="modal" data-bs-target="#exampleModal" ><a class="link">My Reservations</a></button>
+             <button mat-menu-item ><button style="margin-left: 30px;" class='btn btn-warning' (click)="logout()">LogOut</button></button>
          </mat-menu>
     </div>
 </mat-toolbar>
@@ -43,7 +43,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div> -->
             <div class="modal-body">
-            <app-reservation-list></app-reservation-list>
+            <app-reservation-list ></app-reservation-list>
         </div>
       </div>
     </div>

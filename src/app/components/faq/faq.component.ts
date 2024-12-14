@@ -7,13 +7,26 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./faq.component.css']
 })
 export class FaqComponent implements OnInit {
+isAdmin: any = false;
+isVendor: any = false;
+isCustomer: any =  false;
+isLogged = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) {
+    this.authService.isLogged().subscribe((isAuthenticated) => {
+      this.isLogged = isAuthenticated;
+      if(this.isLogged)
+      {
+          this.isAdmin = this.authService.isAdmin();
+          this.isVendor = this.authService.isVendor();
+          this.isCustomer = this.authService.isCustomer();
+      }
+  } )
 
-  authService = inject(AuthService);
+  }
 
   faqs: any[] = [
-        {question: "After clicking on seat, how long do reservation stay?", answer: "Seat is reserved for 15 mins after seat is clicked."},
+    {question: "After clicking on seat, how long do reservation stay?", answer: "Seat is reserved for 15 mins after seat is clicked."},
         {question: "How can I add a new cinema?", answer: "You can add a new cinema from the admin dashboard under the 'Cinemas' section."},
         {question: "How do I update movie information?", answer: "Movie information can be updated by navigating to the 'Movies' section in the admin dashboard and selecting the movie you wish to edit."},
         {question: "What happens if I cancel a reservation?", answer: "If you cancel a reservation, the seat becomes available for others to book immediately."},

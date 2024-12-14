@@ -1,8 +1,8 @@
-<app-gust-header *ngIf="!this.authService.isLogged()"></app-gust-header>
-<app-admin-header *ngIf="this.authService.isAdmin()"></app-admin-header>
-<app-vendor-header *ngIf="this.authService.isVendor()"></app-vendor-header>
+<app-gust-header *ngIf="!isLogged"></app-gust-header>
+<app-admin-header *ngIf="isAdmin"></app-admin-header>
+<app-vendor-header *ngIf="isVendor"></app-vendor-header>
 <app-customer-header
-  *ngIf="this.authService.isCustomer()"
+  *ngIf="isCustomer"
 ></app-customer-header>
 <div
   class="container text-center"

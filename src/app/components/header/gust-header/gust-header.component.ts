@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-gust-header',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GustHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) {
+
+    this.authService.isLogged().subscribe((isAuthenticated) => { 
+
+      this.isLogged = isAuthenticated;
+      if(this.isLogged) 
+      {
+        this.isCustomer = this.authService.isCustomer();
+      }
+    });
+   }
 
   ngOnInit() {
   }
 
+  isLogged:boolean = false;
+  isCustomer:boolean = false;
 }

@@ -12,13 +12,22 @@ const ShowTime = sequelize.define("ShowTime", {
     allowNull: false,
   },
   showTime: {
-    type: DataTypes.TIME,
+    type: DataTypes.STRING,
     allowNull: false,
   },
-  showDate:{
-    type: DataTypes.DATE,
+  cinemaId: {
+    type: DataTypes.INTEGER,
     allowNull: false,
-  }
+  },
+  movieId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  isReleased: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: true,
+  },
 });
 
 export default ShowTime;

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movie.interface';
+import { MovieService } from '../../../services/movie/movie.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-movie-list',
@@ -8,22 +10,24 @@ import { Movie } from 'src/app/interfaces/movie.interface';
 })
 export class MovieListComponent implements OnInit {
 
-  constructor() { }
 
-  movies: Movie[] = [
+  constructor(private movieService:MovieService) { 
+}
+
+movies: Movie[] = [
     {
-      id: "1",
-      name: 'Inception',
-      src: '../../../../assets/imgs/posters/1.jpg',
-      duration: '2h 28m',
-      cinema: 'Cinema 1'
+        id: "1",
+        name: 'Inception',
+        src: '../../../../assets/imgs/posters/1.jpg',
+        duration: '2h 28m',
+        cinema: 'Cinema 1'
     },
     {
-      id: "2",
-      name: 'The Shawshank Redemption',
-      src: '../../../../assets/imgs/posters/2.jpg',
-      category: 'Drama',
-      duration: '2h 22m',
+        id: "2",
+        name: 'The Shawshank Redemption',
+        src: '../../../../assets/imgs/posters/2.jpg',
+        category: 'Drama',
+        duration: '2h 22m',
       cinema: 'Cinema 2'
     },
     {
@@ -52,7 +56,7 @@ export class MovieListComponent implements OnInit {
     }
     ,
     {
-      id: "1",
+        id: "1",
       name: 'Inception',
       src: '../../../../assets/imgs/posters/1.jpg',
       duration: '2h 28m',
@@ -92,7 +96,49 @@ export class MovieListComponent implements OnInit {
     }
   ];
 
+  buffer: Movie[] = [];
   ngOnInit() {
-  }
+      this.movieService.getMovies().subscribe((res:any)=>
+      {
+          console.log(res);
 
+          this.movies = res.map((cinema:any)=>{
+            let movie = {...cinema.Movies[0], src: `${this.movieService.base}${cinema.Movies[0].img}`, name: cinema.Movies[0].title, cinema: cinema.name};
+            // console.log(movie);
+             return movie;
+          })
+          this.buffer = this.movies;
+      })
+
+      this.movieService.search.subscribe((search:string)=>
+      {
+        if(search == '')
+        {
+            this.movies = this.buffer
+        }
+        else if(search.length > 0)
+          {
+              this.movies = this.buffer.filter((movie:any)=>
+              {
+                  return movie.name.toLowerCase().includes(search.toLowerCase());
+              })
+          }
+      })
+
+      this.movieService.filter.subscribe((filter:string)=>
+      {
+        if(filter == '')
+        {
+            this.movies = this.buffer
+        }
+        else if(filter.length > 0)
+          {
+              this.movies = this.buffer.filter((movie:any)=>
+              {
+                  return movie.cinema.toLowerCase().includes(filter.toLowerCase());
+              })
+          }
+      })
+  }
+  
 }

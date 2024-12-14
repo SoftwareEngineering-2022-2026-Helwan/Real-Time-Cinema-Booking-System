@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Grand Cinema",
+    "Location": {
+      "lat": 30.0444,
+      "lng": 31.2357,
+      "city": "Cairo"
+    },
+    "vendorId": 2
+  },
+  {
+    "name": "Star Cinema",
+    "Location": {
+      "lat": 30.0131,
+      "lng": 31.2089,
+      "city": "Giza"
+    },
+    "vendorId": 2
+  },
+  {
+    "name": "Galaxy Cinema",
+    "Location": {
+      "lat": 31.2001,
+      "lng": 29.9187,
+      "city": "Alexandria"
+    },
+    "vendorId": 4
+  },
+  {
+    "name": "Sunshine Cinema",
+    "Location": {
+      "lat": 25.6872,
+      "lng": 32.6396,
+      "city": "Luxor"
+    },
+    "vendorId": 4
+  },
+  {
+    "name": "Moonlight Cinema",
+    "Location": {
+      "lat": 24.0889,
+      "lng": 32.8998,
+      "city": "Aswan"
+    },
+    "vendorId": 6
+  },
+  {
+    "name": "Oasis Cinema",
+    "Location": {
+      "lat": 27.2579,
+      "lng": 33.8116,
+      "city": "Hurghada"
+    },
+    "vendorId": 6
+  },
+  {
+    "name": "Paradise Cinema",
+    "Location": {
+      "lat": 27.9158,
+      "lng": 34.3299,
+      "city": "Sharm El-Sheikh"
+    },
+    "vendorId": 8
+  },
+  {
+    "name": "Regal Cinema",
+    "Location": {
+      "lat": 29.9668,
+      "lng": 32.5498,
+      "city": "Suez"
+    },
+    "vendorId": 8
+  },
+  {
+    "name": "Empire Cinema",
+    "Location": {
+      "lat": 31.2653,
+      "lng": 32.3019,
+      "city": "Port Said"
+    },
+    "vendorId": 10
+  },
+  {
+    "name": "Majestic Cinema",
+    "Location": {
+      "lat": 30.5965,
+      "lng": 32.2715,
+      "city": "Ismailia"
+    },
+    "vendorId": 10
+  },
+  {
+    "name": "Grand Cinema",
+    "Location": {
+      "lat": 30.0444,
+      "lng": 31.2357,
+      "city": "Cairo"
+    },
+    "vendorId": 12
+  },
+  {
+    "name": "Star Cinema",
+    "Location": {
+      "lat": 30.0131,
+      "lng": 31.2089,
+      "city": "Giza"
+    },
+    "vendorId": 12
+  },
+  {
+    "name": "Galaxy Cinema",
+    "Location": {
+      "lat": 31.2001,
+      "lng": 29.9187,
+      "city": "Alexandria"
+    },
+    "vendorId": 14
+  },
+  {
+    "name": "Sunshine Cinema",
+    "Location": {
+      "lat": 25.6872,
+      "lng": 32.6396,
+      "city": "Luxor"
+    },
+    "vendorId": 14
+  },
+  {
+    "name": "Moonlight Cinema",
+    "Location": {
+      "lat": 24.0889,
+      "lng": 32.8998,
+      "city": "Aswan"
+    },
+    "vendorId": 16
+  },
+  {
+    "name": "Oasis Cinema",
+    "Location": {
+      "lat": 27.2579,
+      "lng": 33.8116,
+      "city": "Hurghada"
+    },
+    "vendorId": 16
+  },
+  {
+    "name": "Paradise Cinema",
+    "Location": {
+      "lat": 27.9158,
+      "lng": 34.3299,
+      "city": "Sharm El-Sheikh"
+    },
+    "vendorId": 18
+  },
+  {
+    "name": "Regal Cinema",
+    "Location": {
+      "lat": 29.9668,
+      "lng": 32.5498,
+      "city": "Suez"
+    },
+    "vendorId": 18
+  },
+  {
+    "name": "Empire Cinema",
+    "Location": {
+      "lat": 31.2653,
+      "lng": 32.3019,
+      "city": "Port Said"
+    },
+    "vendorId": 20
+  },
+  {
+    "name": "Majestic Cinema",
+    "Location": {
+      "lat": 30.5965,
+      "lng": 32.2715,
+      "city": "Ismailia"
+    },
+    "vendorId": 20
+  }
+]

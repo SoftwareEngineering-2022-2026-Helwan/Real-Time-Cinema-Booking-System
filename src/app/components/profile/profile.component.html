@@ -1,3 +1,17 @@
+<div *ngIf="isLoggedIn">
+    <app-customer-header></app-customer-header>
+  </div>
+  
+  <div *ngIf="!isLoggedIn">
+    <app-gust-header></app-gust-header>
+  </div>
+<div *ngIf="isVendor">
+    <app-vendor-header></app-vendor-header>
+  </div>
+  
+  <div *ngIf="isAdmin">
+    <app-admin-header></app-admin-header>
+  </div>
 <div class="body">
     
     <div
@@ -18,7 +32,6 @@
     >
       <form
         [formGroup]="signupForm"
-        (ngSubmit)="submitSignupForm(signupForm)"
         class="row g-3"
       >
         <div class="container">
@@ -242,7 +255,7 @@
         </div>
         <div class="col-md-12" *ngIf="isViewMode">
           <button
-            type="submit"
+            type="button"
             class="btn"
             [disabled]="signupForm.invalid"
             (click)="toggleEdit()"
@@ -270,19 +283,19 @@
             type="submit"
             class="btn mx-2"
             [disabled]="signupForm.invalid"
-            (click)="toggleEdit()"
+            (click)="submitSignupForm()"
           >
             <span>Save</span>
           </button>
           <button
-            type="submit"
+            type="button"
             class="btn mx-2"
             (click)="resetForm()"
           >
             <span>Reset</span>
           </button>
           <button
-            type="submit"
+            type="button"
             class="btn mx-2"
             (click)="cancelEdit()"
           >

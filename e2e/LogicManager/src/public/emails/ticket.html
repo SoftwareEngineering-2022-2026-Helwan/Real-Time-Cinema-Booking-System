@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+</head>
+<body>
+    
+    <div style="display: flex; width: 100vw; flex-direction: column; justify-content: center; align-items: center;height: 100vh;">
+          <div class="ticket-card" style="width: 360px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 6px 15px rgba(0, 0, 0, 0.2); padding: 20px; overflow: hidden; position: relative; border: 2px dashed #ccc;">
+              <div class="ticket-header" style="border-bottom: 2px dashed #ddd; padding-bottom: 10px; margin-bottom: 10px;">
+                <div class="movie-name" style="font-weight: bold; font-size: 1.3rem;">{{movie}}</div>
+                <div class="show-time" style="font-size: 0.9rem; color: #555;">{{showtime}}</div>
+              </div>
+              <div class="ticket-body" style="font-family: 'Arial', sans-serif;">
+                <div class="reservation-number" style="font-size: 1rem; font-weight: bold;">Reservation Number: {{id}}</div>
+                <div class="seats" style="font-size: 1rem; font-weight: bold;">Seats: {{seats}}</div>
+                <div class="total-price" style="font-size: 1rem; font-weight: bold;">Total Price: ${{price}}</div>
+              </div>
+              <div class="ticket-footer" style="margin-top: 15px;">
+                <div class="barcode" style="height: 50px; background: repeating-linear-gradient(to right, black 0%, black 10%, white 10%, white 20%); background-size: 6px 100%;"></div>
+              </div>
+            </div>
+      </div>
+    
+</body>
+</html>
+
+

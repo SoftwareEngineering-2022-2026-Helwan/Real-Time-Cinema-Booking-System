@@ -3,16 +3,16 @@
         <img class="img" src="../../assets/imgs/WhatsApp Image 2024-11-29 at 20.16.54_39526a40.jpg" width="60" height="60">
     </div>
     <div class="mydiv">
-        <button class='mybutton myspn' mat-button color="basic">
+        <button class='mybutton myspn' mat-button color="basic" routerLink="/vendor">
             <span>Home</span>
         </button>
-        <button class='mybutton myspn' mat-button color="basic">
+        <button class='mybutton myspn' mat-button color="basic" routerLink="/cinema-list">
             <span>Cinema List</span>
         </button>
-        <button class='mybutton myspn' mat-button color="basic">
+        <button class='mybutton myspn' mat-button color="basic" routerLink="/faq">
             <span>FAQ</span>
         </button>
-        <button class='mybutton myspn' mat-button color="basic">
+        <button class='mybutton myspn' mat-button color="basic" routerLink="/vendor-movies-list">
             <span>Movie List</span>
         </button>
     </div>
@@ -20,8 +20,8 @@
         <button mat-button [matMenuTriggerFor]="menu"><img class="img1" src="../../assets/imgs/images.jpeg" alt=""></button>
 
         <mat-menu #menu="matMenu">
-             <button mat-menu-item><a href="#" class="link">Profile</a></button>
-             <button mat-menu-item><button style="margin-left: 30px;" class='btn btn-warning' >LogOut</button></button>
+             <button mat-menu-item routerLink="/profile" ><a class="link">Profile</a></button>
+             <button mat-menu-item (click)="logout()"><button style="margin-left: 30px;" class='btn btn-warning' >LogOut</button></button>
          </mat-menu>
     </div>
 </mat-toolbar>

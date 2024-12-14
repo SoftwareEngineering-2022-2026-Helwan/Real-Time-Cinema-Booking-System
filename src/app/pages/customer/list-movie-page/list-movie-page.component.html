@@ -1,4 +1,4 @@
-<app-customer-header></app-customer-header>
+<app-gust-header></app-gust-header>
 
 <div class="search" style="margin-top: 85px; padding: 0 25px">
   <div
@@ -41,10 +41,11 @@
         <mat-select
           [(ngModel)]="selectedValue"
           name="cinema"
+          (ngModelChange)="fillter()"
           formControlName="searchFilter"
         >
-          <mat-option>None</mat-option>
-          <mat-option *ngFor="let cinema of cinemas" [value]="cinema.id">
+          <mat-option [value]="''">None</mat-option>
+          <mat-option *ngFor="let cinema of cinemas" [value]="cinema.value">
             {{ cinema.value }}
           </mat-option>
         </mat-select>

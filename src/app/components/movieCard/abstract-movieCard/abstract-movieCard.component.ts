@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../../interfaces/movie.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-abstract-movieCard',
@@ -8,12 +9,13 @@ import { Movie } from '../../../interfaces/movie.interface';
 })
 export class AbstractMovieCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
 @Input() movie !: Movie;
 
 viewMovie(movie: Movie) {
   console.log(movie.id);
+  this.router.navigate(['/reservation', movie.id]);
 }
 
   ngOnInit() {

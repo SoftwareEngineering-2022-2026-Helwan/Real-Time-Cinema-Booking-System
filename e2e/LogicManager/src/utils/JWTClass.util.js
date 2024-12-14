@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-class JWT {
+export default class JWT {
   #Secret;
   constructor(secret) {
     this.#Secret = secret;
@@ -25,4 +25,3 @@ class JWT {
     return decoded ? decoded : "no valid token";
   }
 }
-module.exports = JWT;  
