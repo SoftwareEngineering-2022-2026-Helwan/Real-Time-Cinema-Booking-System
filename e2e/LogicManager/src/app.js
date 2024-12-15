@@ -13,6 +13,7 @@ import { userRouter } from "./router/user.js";
 import { reportRouter } from "./router/report.js";
 import { reservationRouter } from "./router/reservation.js";
 import { showtimeRouter } from "./router/showtime.js";
+import { reservationMQTT } from "./mqtt/reservation/reservation.mqtt.js";
 
 const app = express();
 
@@ -34,6 +35,7 @@ sequelize
     console.error("Error syncing database:", error);
   });
 
+reservationMQTT();
 app.use("/api/cinema", cinemaRouter);
 app.use("/api/movie", movieRouter);
 app.use("/api/report", reportRouter);

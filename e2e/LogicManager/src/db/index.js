@@ -1,6 +1,9 @@
 import { Sequelize } from "sequelize";
 import redis from "redis";
 import * as env from "../env.js";
+import mqtt from "mqtt";
+
+export const mqttClient = mqtt.connect("mqtt://localhost:1883");
 
 export const sequelize = new Sequelize(env.DBNAME, env.USERNAME, env.PASSWORD, {
   host: env.HOST,
