@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators, ValidatorFn} from '@angular/forms'
 import { NewMovie } from 'src/app/interfaces/newMovie.interface';
+import { MovieService } from 'src/app/services/movie/movie.service';
 
 @Component({
   selector: 'app-movie-form',
@@ -9,7 +10,7 @@ import { NewMovie } from 'src/app/interfaces/newMovie.interface';
 })
 export class MovieFormComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   movieForm : FormGroup = new FormGroup({
     title : new FormControl(null,[Validators.required]),
@@ -46,6 +47,7 @@ export class MovieFormComponent implements OnInit, OnDestroy {
 
   submitMovieForm(form : FormGroup){
     console.log(form.value);
+    // this.movieService
   }
   ngOnInit() {
   }

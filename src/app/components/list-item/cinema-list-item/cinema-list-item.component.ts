@@ -1,4 +1,5 @@
 import { Component, OnInit , Input} from '@angular/core';
+import { CinemaService } from 'src/app/services/cinema/cinema.service';
 
 @Component({
   selector: 'app-cinema-list-item',
@@ -7,7 +8,7 @@ import { Component, OnInit , Input} from '@angular/core';
 })
 export class CinemaListItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cinemaService: CinemaService) { }
 
   @Input()  cinemaList: any[] = [];
   displayedColumns = ['name', 'location', 'numberOfMovies', 'action'];

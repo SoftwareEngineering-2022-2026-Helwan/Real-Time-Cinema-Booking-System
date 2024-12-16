@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { CinemaService } from 'src/app/services/cinema/cinema.service';
 
 @Component({
   selector: 'app-cinema-list',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CinemaListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cinemaSrv: CinemaService, private auth: AuthService) { }
   cinemaList = [
     { name: 'Cinema1', location: 'Cairo', numberOfMovies: 5 },
     { name: 'Cinema2', location: 'Alex', numberOfMovies: 3 },
@@ -18,6 +20,10 @@ export class CinemaListComponent implements OnInit {
 
 
   ngOnInit() {
+    this.cinemaSrv.getCinemasById(this.auth.decodeToken().id).subscribe((res:any )=> {
+        console.log(res);
+        // this.cinemaList = [...this.cinemaList, ...res];
+    });
   }
 
 }

@@ -24,6 +24,7 @@ export class SeatComponent implements OnInit, OnDestroy {
         this.reservation.reservationResponse.subscribe(res => {
             
             if(reservtion.seatNumber != res.message.seatNumber)
+                new Error("E40st")
                 return;
 
             console.log(res);
@@ -54,12 +55,12 @@ export class SeatComponent implements OnInit, OnDestroy {
             userID: this.auth.decodeToken().id,
             seatReserved: this.reservation.seatsByShowtime.find(showtime => showtime.id == this.showtime?.id)?.seats ?? []
         };
-        // console.log("curr st id: ",this.showtime?.id);
-        // this.reservation.selectedShowTime.subscribe((showtime: any) => {
-        //     this.reservation.getSeatsByShowtime(showtime.id).subscribe((res: any) => {
-        //         console.log("res : ",res)
-        //     });
-        // })
+        console.log("curr st id: ",this.showtime?.id);
+        this.reservation.selectedShowTime.subscribe((showtime: any) => {
+            this.reservation.getSeatsByShowtime(showtime.id).subscribe((res: any) => {
+                console.log("res : ",res)
+            });
+        })
 
     }
 

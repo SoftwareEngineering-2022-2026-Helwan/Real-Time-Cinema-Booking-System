@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators, ValidatorFn} from '@angular/forms'
+import { CinemaService } from 'src/app/services/cinema/cinema.service';
 @Component({
   selector: 'app-cinema-form',
   templateUrl: './cinema-form.component.html',
@@ -8,7 +9,7 @@ import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators, V
 export class CinemaFormComponent implements OnInit,OnDestroy {
 
   imgTag:any;
-  constructor() {
+  constructor(private cinemaSrv:CinemaService) {
     this.imgTag = document.createElement("img");
     let image = "../../../../assets/imgs/mapMarker.svg";
     this.imgTag.src = image;
@@ -52,6 +53,13 @@ export class CinemaFormComponent implements OnInit,OnDestroy {
 
   submitCinemaForm(form : FormGroup){
     console.log(form.value);
+    let  data = {
+        Location: form.value.location,
+        name: form.value.name
+    }
+    this.cinemaSrv.createCineam(data).subscribe((res:any) => {
+        console.log("res: ",res);
+    })
   }
 
   ngOnInit() {

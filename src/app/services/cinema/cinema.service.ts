@@ -21,5 +21,8 @@ getCinemasById(id:number)
     return this.http.get(`${this.api}/cinema/getCinemas/${id}`, { headers: { Authorization: `Bearer ${token}` } });
 }
 
-
+createCineam(data:any){
+    let token = sessionStorage.getItem('token');
+    return this.http.post(`${this.api}/cinema/createCinema/`, data, { headers: { Authorization: `Bearer ${token}` } });
+}
 }
